@@ -1,0 +1,10 @@
+// Nombre de sujets disponibles pour chaque épreuve du DELF A2.
+// Pour ajouter un sujet : créer le fichier (par exemple data/a2/ecrits_02.js)
+// puis augmenter le nombre ici.
+
+window.LISTE_SUJETS = {
+  "ecrits": 1,   // Compréhension des écrits : ecrits_01.js, ecrits_02.js…
+  "oral": 0,     // Compréhension de l'oral (étape 4)
+  "orale": 0,    // Production orale (étape 5)
+  "ecrite": 0    // Production écrite (étape 6)
+};

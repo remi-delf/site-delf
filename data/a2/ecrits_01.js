@@ -45,17 +45,17 @@ window.SUJET = {
 <p>Nous sommes trois amis et nous jouons du rock le vendredi soir. <span data-s="a">Il nous manque un guitariste !</span> Pas besoin d'être professionnel. Venez nous voir au café La Note, rue des Lilas.</p>` }
       ],
       questions: [
-        { doc: "d1", s: "a", q: "L'annonce 1 correspond à…", choix: ["Sofia","Karim","Léa","M. Petit","Anna","Hugo","Mme Roux","Tom"], r: 4, p: 1,
+        { doc: "d1", s: "a", q: "L'annonce 1 correspond à…", choix: ["Sofia","Karim","Léa","M. Petit","Anna","Hugo","Mme Roux","Tom"], r: 4, p: 1.5,
           e: "Anna cherche un cours de français gratuit le soir : les cours ont lieu « de 19 h à 20 h 30 » et l'inscription est « gratuite »." },
-        { doc: "d2", s: "a", q: "L'annonce 2 correspond à…", choix: ["Sofia","Karim","Léa","M. Petit","Anna","Hugo","Mme Roux","Tom"], r: 1, p: 1,
+        { doc: "d2", s: "a", q: "L'annonce 2 correspond à…", choix: ["Sofia","Karim","Léa","M. Petit","Anna","Hugo","Mme Roux","Tom"], r: 1, p: 1.5,
           e: "Karim cherche un sport pour le dimanche matin : le club court « chaque dimanche à 9 h »." },
-        { doc: "d3", s: "a", q: "L'annonce 3 correspond à…", choix: ["Sofia","Karim","Léa","M. Petit","Anna","Hugo","Mme Roux","Tom"], r: 0, p: 1,
+        { doc: "d3", s: "a", q: "L'annonce 3 correspond à…", choix: ["Sofia","Karim","Léa","M. Petit","Anna","Hugo","Mme Roux","Tom"], r: 0, p: 0.5,
           e: "Sofia veut cuisiner des plats d'autres pays : le chef apprend « une recette d'un autre pays »." },
         { doc: "d4", s: "a", q: "L'annonce 4 correspond à…", choix: ["Sofia","Karim","Léa","M. Petit","Anna","Hugo","Mme Roux","Tom"], r: 6, p: 1,
           e: "Mme Roux cherche quelqu'un pour son chien : l'étudiante peut « [s']occuper de votre chien pendant vos vacances »." },
         { doc: "d5", s: "a", q: "L'annonce 5 correspond à…", choix: ["Sofia","Karim","Léa","M. Petit","Anna","Hugo","Mme Roux","Tom"], r: 2, p: 1,
           e: "Léa veut travailler l'été avec des enfants : le centre cherche des animateurs « pour juillet et août »." },
-        { doc: "d6", s: "a", q: "L'annonce 6 correspond à…", choix: ["Sofia","Karim","Léa","M. Petit","Anna","Hugo","Mme Roux","Tom"], r: 5, p: 1,
+        { doc: "d6", s: "a", q: "L'annonce 6 correspond à…", choix: ["Sofia","Karim","Léa","M. Petit","Anna","Hugo","Mme Roux","Tom"], r: 5, p: 0.5,
           e: "Hugo veut jouer de la guitare dans un groupe : « Il nous manque un guitariste ! »" }
       ]
     },
@@ -112,11 +112,11 @@ window.SUJET = {
 <p>En cas de problème, appelez le numéro affiché sur la porte.</p>` }
       ],
       questions: [
-        { doc: "d1", s: "a", q: "Pourquoi Camille est-elle partie tôt ?", choix: ["Pour un entretien d'embauche.","Pour faire les courses.","Pour chercher ses parents."], r: 0, p: 1,
+        { doc: "d1", s: "a", q: "Pourquoi Camille est-elle partie tôt ?", choix: ["Pour un entretien d'embauche.","Pour faire les courses.","Pour chercher ses parents."], r: 0, p: 0.5,
           e: "Camille écrit : « Je pars tôt ce matin pour mon entretien d'embauche »." },
-        { doc: "d1", s: "b", q: "Qu'est-ce que Nora doit faire à 11 h ?", choix: ["Acheter du pain.","Ouvrir la porte au plombier.","Prendre une douche."], r: 1, p: 1,
+        { doc: "d1", s: "b", q: "Qu'est-ce que Nora doit faire à 11 h ?", choix: ["Acheter du pain.","Ouvrir la porte au plombier.","Prendre une douche."], r: 1, p: 2,
           e: "« Le plombier vient à 11 h » : Nora doit lui ouvrir la porte. Elle ne doit pas prendre de douche avant son passage." },
-        { doc: "d2", s: "a", q: "À la piscine, le bonnet de bain est…", choix: ["obligatoire.","interdit.","offert à l'accueil."], r: 0, p: 1,
+        { doc: "d2", s: "a", q: "À la piscine, le bonnet de bain est…", choix: ["obligatoire.","interdit.","offert à l'accueil."], r: 0, p: 0.5,
           e: "« Le bonnet de bain est obligatoire pour tous. » Il n'est pas offert : il coûte 2 €." },
         { doc: "d2", s: "b", q: "Où est-ce qu'on peut manger ?", choix: ["Au bord du bassin.","À l'accueil.","Dans une salle au premier étage."], r: 2, p: 1,
           e: "Il est interdit de manger au bord du bassin, mais « une salle est prévue pour les pique-niques au premier étage »." },

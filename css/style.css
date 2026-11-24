@@ -212,3 +212,46 @@ button:disabled { opacity: .45; cursor: default; }
 #fin { text-align: center; }
 #fin p { margin: 6px 0; }
 .resultat { font-size: 20px; font-weight: bold; }
+
+/* ---------- Liste des sujets ---------- */
+.liste-sujets { display: grid; gap: 8px; margin: 0; padding: 0; list-style: none; }
+.liste-sujets .sujet {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  min-height: 52px;
+  padding: 10px 16px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--card);
+  color: var(--ink);
+  text-decoration: none;
+}
+.liste-sujets .sujet:hover { border-color: var(--blue); }
+.liste-sujets .nom { font-weight: bold; }
+.liste-sujets .etat { color: var(--muted); font-size: 15px; }
+.liste-sujets .fait { border-left: 5px solid var(--ok); }
+.liste-sujets .fait .etat { color: var(--ok); font-weight: bold; font-size: 16px; }
+.liste-sujets .vide { color: var(--muted); }
+
+/* Boutons-liens (« Sujet suivant », « Retour à la liste ») */
+.boutons { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 14px !important; }
+.bouton {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 8px 20px;
+  border-radius: 8px;
+  background: var(--blue);
+  color: var(--on-blue);
+  font-size: 16px;
+  text-decoration: none;
+}
+.bouton[hidden] { display: none; }
+button.secondaire {
+  background: transparent;
+  color: var(--blue);
+  border: 1px solid var(--line);
+}
+#resultat { white-space: nowrap; }

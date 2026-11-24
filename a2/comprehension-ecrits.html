@@ -8,11 +8,11 @@
 </head>
 <body>
 <main>
-  <a class="retour" href="../index.html#a2">← Accueil</a>
+  <a class="retour" id="retour" href="../index.html#a2">← Accueil</a>
   <h1>DELF A2 – Compréhension des écrits</h1>
-  <p class="sub">Sujet d'entraînement n° <span id="numero">…</span> · textes originaux au format de l'examen</p>
+  <p class="sub" id="sous-titre">Choisissez un sujet.</p>
 
-  <details class="encadre rappel" open>
+  <details class="encadre rappel" id="rappel" open>
     <summary>Comment se passe l'épreuve le jour de l'examen ?</summary>
     <ul>
       <li><b>Durée :</b> 30 minutes. <b>4 exercices</b>, <b>25 points</b>.</li>
@@ -29,18 +29,34 @@
     </ul>
   </details>
 
-  <p class="aide">Pour chaque question : cliquez sur une réponse, puis sur « Valider ». La phrase qui contient la réponse est surlignée dans le texte.</p>
+  <!-- Vue 1 : la liste des sujets (adresse sans ?sujet=) -->
+  <section id="vue-liste" hidden>
+    <h2>Les sujets</h2>
+    <ol class="liste-sujets" id="liste"></ol>
+  </section>
 
-  <div id="app"></div>
+  <!-- Vue 2 : un sujet (adresse avec ?sujet=1, ?sujet=2…) -->
+  <section id="vue-sujet" hidden>
+    <p class="aide">Pour chaque question : cliquez sur une réponse, puis sur « Valider ». La phrase qui contient la réponse est surlignée dans le texte.</p>
 
-  <div id="total">Score total : 0 / 25</div>
+    <div id="app"></div>
 
-  <div id="fin" class="encadre" hidden>
-    <p class="resultat">Sujet terminé ! Votre note : <span id="resultat"></span></p>
-    <p id="conseil"></p>
-    <p><button id="recommencer">Recommencer ce sujet</button></p>
-  </div>
+    <div id="total">Score total : 0 / 25</div>
+
+    <div id="fin" class="encadre" hidden>
+      <p class="resultat">Sujet terminé ! Votre note : <span id="resultat"></span></p>
+      <p id="conseil"></p>
+      <p class="boutons">
+        <a class="bouton" id="suivant" href="#">Sujet suivant</a>
+        <a class="bouton" href="comprehension-ecrits.html">Retour à la liste</a>
+      </p>
+      <p id="dernier" hidden>C'est le dernier sujet pour l'instant.</p>
+      <p><button class="secondaire" id="recommencer">Recommencer ce sujet</button></p>
+    </div>
+  </section>
 </main>
+<script src="../data/a2/liste.js"></script>
+<script src="../js/progression.js"></script>
 <script src="../js/ecrits.js"></script>
 </body>
 </html>
