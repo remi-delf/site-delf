@@ -76,6 +76,7 @@ a { color: var(--blue); }
 }
 
 .niveau {
+  margin: 0;
   min-height: 72px;
   padding: 10px;
   border: 2px solid var(--line);
@@ -128,3 +129,86 @@ a { color: var(--blue); }
   background: var(--blue-soft);
 }
 .encadre p { margin: 0; }
+
+/* Encadré de rappel repliable */
+.rappel summary { cursor: pointer; font-weight: bold; min-height: 32px; }
+.rappel ul { margin: 8px 0 0; padding-left: 22px; }
+.rappel li { margin: 4px 0; }
+.aide { color: var(--muted); font-size: 15px; }
+
+/* ---------- Exercices (compréhension des écrits / de l'oral) ---------- */
+.consigne { font-style: italic; margin: 4px 0 12px; }
+
+.doc {
+  margin-top: 16px;
+  padding: 16px 18px;
+  border-radius: 10px;
+  border-left: 5px solid var(--blue);
+  background: var(--card);
+}
+.doc h3 { margin: 0 0 8px; font-size: 19px; }
+.doc p { margin: 0 0 10px; }
+.doc p:last-child, .doc ul:last-child, .doc ol:last-child { margin-bottom: 0; }
+.doc ol { margin: 0 0 10px; padding-left: 22px; }
+.intro { border-left-color: var(--muted); }
+.personnes { margin: 0; padding: 0; list-style: none; }
+.personnes li { margin: 4px 0; }
+
+.hl { background: var(--hl); border-radius: 3px; padding: 1px 2px; transition: background .3s; }
+
+.q { margin-top: 12px; padding: 14px 16px; border-radius: 10px; background: var(--card); }
+.q > b { display: block; margin-bottom: 4px; }
+.pts { float: right; margin-left: 8px; font-size: 14px; font-weight: normal; color: var(--muted); }
+
+.choix label {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  min-height: 44px;
+  margin: 6px 0;
+  padding: 8px 10px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  cursor: pointer;
+}
+.choix.compacts { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; }
+.choix.compacts label { margin: 0; }
+@media (max-width: 560px) {
+  .choix.compacts { grid-template-columns: repeat(2, 1fr); }
+}
+.choix label.good { border: 2px solid var(--ok); }
+.choix label.bad { border: 2px solid var(--ko); }
+input[type=radio] { flex: none; width: 20px; height: 20px; margin: 0; }
+
+button {
+  min-height: 44px;
+  margin-top: 6px;
+  padding: 8px 20px;
+  border: 0;
+  border-radius: 8px;
+  background: var(--blue);
+  color: var(--on-blue);
+  font: inherit;
+  font-size: 16px;
+  cursor: pointer;
+}
+button:disabled { opacity: .45; cursor: default; }
+
+.fb { margin: 8px 0 0; }
+.fb:empty { display: none; }
+.ok { color: var(--ok); font-weight: bold; }
+.ko { color: var(--ko); font-weight: bold; }
+.score { margin-top: 14px; font-size: 18px; font-weight: bold; }
+
+#total {
+  margin-top: 36px;
+  padding: 16px;
+  border-radius: 10px;
+  background: var(--card);
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+}
+#fin { text-align: center; }
+#fin p { margin: 6px 0; }
+.resultat { font-size: 20px; font-weight: bold; }

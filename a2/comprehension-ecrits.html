@@ -10,10 +10,37 @@
 <main>
   <a class="retour" href="../index.html#a2">← Accueil</a>
   <h1>DELF A2 – Compréhension des écrits</h1>
-  <p class="sub">30 minutes · 4 exercices · 25 points</p>
-  <div class="encadre">
-    <p>Cette page sera construite à l'étape 2.</p>
+  <p class="sub">Sujet d'entraînement n° <span id="numero">…</span> · textes originaux au format de l'examen</p>
+
+  <details class="encadre rappel" open>
+    <summary>Comment se passe l'épreuve le jour de l'examen ?</summary>
+    <ul>
+      <li><b>Durée :</b> 30 minutes. <b>4 exercices</b>, <b>25 points</b>.</li>
+      <li><b>Documents :</b> annonces, publicités, courriels, consignes, modes d'emploi et articles de journal.</li>
+      <li><b>Questions :</b> associer des documents à des personnes, choisir la bonne réponse (A, B ou C), dire si c'est vrai ou faux.</li>
+      <li><b>Conseils :</b>
+        <ul>
+          <li>Lisez d'abord la consigne et les questions, puis le texte.</li>
+          <li>Vous n'avez pas besoin de comprendre tous les mots.</li>
+          <li>Répondez à toutes les questions : une réponse fausse n'enlève pas de points.</li>
+          <li>Gardez environ 7 minutes par exercice.</li>
+        </ul>
+      </li>
+    </ul>
+  </details>
+
+  <p class="aide">Pour chaque question : cliquez sur une réponse, puis sur « Valider ». La phrase qui contient la réponse est surlignée dans le texte.</p>
+
+  <div id="app"></div>
+
+  <div id="total">Score total : 0 / 25</div>
+
+  <div id="fin" class="encadre" hidden>
+    <p class="resultat">Sujet terminé ! Votre note : <span id="resultat"></span></p>
+    <p id="conseil"></p>
+    <p><button id="recommencer">Recommencer ce sujet</button></p>
   </div>
 </main>
+<script src="../js/ecrits.js"></script>
 </body>
 </html>
