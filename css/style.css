@@ -1,0 +1,130 @@
+/* Styles communs à toutes les pages du site.
+   Les couleurs sont définies une seule fois ici (variables --...).
+   Le mode sombre suit le réglage du téléphone ou de l'ordinateur,
+   avec une méthode qui marche aussi sur les navigateurs anciens. */
+
+:root {
+  color-scheme: light dark;
+  --bg: #f4f6fb;
+  --card: #ffffff;
+  --ink: #1a1f2b;
+  --muted: #5a6375;
+  --line: #cfd6e4;
+  --blue: #2b5fd9;
+  --on-blue: #ffffff;
+  --blue-soft: #e6edfc;
+  --ok: #1d7a35;
+  --ko: #c0262d;
+  --hl: #ffe27a;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #14181f;
+    --card: #1e2430;
+    --ink: #e8ecf3;
+    --muted: #a3acbd;
+    --line: #3a4252;
+    --blue: #7aa2ff;
+    --on-blue: #0d1220;
+    --blue-soft: #232d45;
+    --ok: #5fd17d;
+    --ko: #ff7b7f;
+    --hl: #6b5a12;
+  }
+}
+
+* { box-sizing: border-box; min-width: 0; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 17px/1.6 Arial, Helvetica, sans-serif;
+}
+
+main {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 18px 16px 60px;
+}
+
+h1 { font-size: 28px; line-height: 1.15; margin: 8px 0 4px; }
+h2 { font-size: 21px; margin: 34px 0 10px; color: var(--blue); }
+.sub { margin: 0 0 10px; color: var(--muted); font-size: 15px; }
+
+a { color: var(--blue); }
+
+/* Lien « ← Accueil » en haut des pages d'épreuve */
+.retour {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-size: 16px;
+  text-decoration: none;
+}
+.retour:hover { text-decoration: underline; }
+
+/* ---------- Page d'accueil : choix du niveau ---------- */
+.niveaux {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+@media (max-width: 480px) {
+  .niveaux { grid-template-columns: repeat(2, 1fr); }
+}
+
+.niveau {
+  min-height: 72px;
+  padding: 10px;
+  border: 2px solid var(--line);
+  border-radius: 10px;
+  background: var(--card);
+  color: var(--ink);
+  font: inherit;
+  font-size: 22px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.niveau small {
+  display: block;
+  font-size: 13px;
+  font-weight: normal;
+  color: var(--muted);
+}
+.niveau:hover:not(:disabled) { border-color: var(--blue); }
+.niveau[aria-pressed="true"] {
+  background: var(--blue);
+  border-color: var(--blue);
+  color: var(--on-blue);
+}
+.niveau[aria-pressed="true"] small { color: var(--on-blue); }
+.niveau:disabled { opacity: .5; cursor: default; }
+
+/* ---------- Page d'accueil : choix de l'épreuve ---------- */
+.epreuves { display: grid; gap: 12px; }
+
+.epreuve {
+  display: block;
+  padding: 16px 18px;
+  border-radius: 10px;
+  border-left: 5px solid var(--blue);
+  background: var(--card);
+  color: var(--ink);
+  text-decoration: none;
+}
+.epreuve:hover { background: var(--blue-soft); }
+.epreuve strong { display: block; font-size: 19px; color: var(--blue); }
+.epreuve span { color: var(--muted); font-size: 15px; }
+
+.note { margin-top: 30px; color: var(--muted); font-size: 15px; }
+
+/* ---------- Encadré (rappel de l'épreuve, messages) ---------- */
+.encadre {
+  margin: 18px 0;
+  padding: 16px 18px;
+  border-radius: 10px;
+  background: var(--blue-soft);
+}
+.encadre p { margin: 0; }

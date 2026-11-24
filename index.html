@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Entraînement au DELF</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<main>
+  <h1>Entraînement au DELF</h1>
+  <p class="sub">Des sujets originaux, au format de l'examen officiel.</p>
+
+  <h2>1. Choisissez votre niveau</h2>
+  <div class="niveaux">
+    <button class="niveau" disabled>A1<small>bientôt</small></button>
+    <button class="niveau" data-niveau="a2" aria-pressed="false">A2<small>disponible</small></button>
+    <button class="niveau" disabled>B1<small>bientôt</small></button>
+    <button class="niveau" disabled>B2<small>bientôt</small></button>
+  </div>
+
+  <section id="choix-epreuve" hidden>
+    <h2>2. Choisissez l'épreuve</h2>
+    <!-- Les épreuves sont dans l'ordre du jour de l'examen. -->
+    <div class="epreuves">
+      <a class="epreuve" href="a2/comprehension-oral.html">
+        <strong>Compréhension de l'oral</strong>
+        <span>25 minutes · 4 exercices · 25 points</span>
+      </a>
+      <a class="epreuve" href="a2/comprehension-ecrits.html">
+        <strong>Compréhension des écrits</strong>
+        <span>30 minutes · 4 exercices · 25 points</span>
+      </a>
+      <a class="epreuve" href="a2/production-ecrite.html">
+        <strong>Production écrite</strong>
+        <span>45 minutes · 2 exercices · 25 points</span>
+      </a>
+      <a class="epreuve" href="a2/production-orale.html">
+        <strong>Production orale</strong>
+        <span>6 à 8 minutes · 10 minutes de préparation · 25 points</span>
+      </a>
+    </div>
+    <p class="note">Pour réussir le DELF A2, il faut 50 points sur 100, et au moins 5 sur 25 dans chaque épreuve.</p>
+  </section>
+</main>
+
+<script>
+// Choix du niveau. Le niveau choisi est mis dans l'adresse (#a2),
+// pour que le bouton « Retour » du navigateur revienne au bon endroit.
+(function () {
+  var boutons = document.querySelectorAll('.niveau[data-niveau]');
+  var section = document.getElementById('choix-epreuve');
+
+  function afficher(niveau) {
+    for (var i = 0; i < boutons.length; i++) {
+      boutons[i].setAttribute('aria-pressed', boutons[i].dataset.niveau === niveau ? 'true' : 'false');
+    }
+    section.hidden = niveau !== 'a2';
+  }
+
+  for (var i = 0; i < boutons.length; i++) {
+    boutons[i].addEventListener('click', function () {
+      location.hash = this.dataset.niveau;
+      afficher(this.dataset.niveau);
+      section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  }
+
+  afficher(location.hash.slice(1));
+})();
+</script>
+</body>
+</html>
