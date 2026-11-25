@@ -1,10 +1,8 @@
 // Texte du prompt copié par l'élève pour la production orale.
 // Rémi peut le modifier ici librement.
 // {{MONOLOGUE}} et {{INTERACTION}} sont remplacés par les sujets choisis.
-//
-// À COMPLÉTER : la grille officielle (critères et points) n'a pas encore
-// été recopiée. Quand elle le sera, la mettre à la place de la partie
-// « Critères d'évaluation » ci-dessous.
+// {{GRILLE}} = la grille de data/a2/grilles.js (en attente : tant qu'elle est vide,
+//              une phrase demande à l'IA d'utiliser la grille officielle actuelle)
 
 window.PROMPT_ORALE = `Tu es examinateur du DELF A2 (épreuve de production orale, format actuel de France Éducation international). Je suis le candidat ou la candidate. Fais passer l'épreuve comme un vrai examinateur, en français.
 
@@ -30,15 +28,11 @@ Joue cette situation avec moi. Tu joues le rôle indiqué et tu réagis naturell
 Situation : « {{INTERACTION}} »
 
 À la fin de la troisième partie (ou si j'écris « fin »), arrête l'examen et donne-moi un bilan écrit, en français simple :
-1. Une note sur 25, selon la grille officielle d'évaluation de la production orale du DELF A2. Donne le détail des points pour chaque partie et pour la langue (vocabulaire, grammaire, prononciation).
+1. Une note sur 25, selon la grille officielle ci-dessous. Donne les points de chaque critère, avec une phrase qui explique chaque note.
 2. Mes 3 points forts.
 3. Mes principales erreurs, avec à chaque fois la phrase correcte.
 4. 3 conseils précis pour progresser.
 
-Critères d'évaluation (à respecter pour la note) :
-- Entretien dirigé : établir un contact social (salutations, politesse), se présenter et parler de soi, répondre à des questions simples.
-- Monologue suivi : présenter simplement un événement, une activité, un lieu ou une expérience ; relier les idées de manière simple et claire.
-- Exercice en interaction : demander et donner des informations ; faire, accepter ou refuser une proposition ; utiliser les formules de politesse.
-- Pour les trois parties : étendue et maîtrise du vocabulaire, correction de la grammaire, prononciation.
+{{GRILLE}}
 
 Commence maintenant : salue-moi et commence l'entretien dirigé.`;

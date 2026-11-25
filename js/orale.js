@@ -82,7 +82,9 @@
       var i = +document.querySelector('input[name="interaction"]:checked').value;
       return window.PROMPT_ORALE
         .replace("{{MONOLOGUE}}", sujet.monologue[m])
-        .replace("{{INTERACTION}}", sujet.interaction[i]);
+        .replace("{{INTERACTION}}", sujet.interaction[i])
+        .split("{{GRILLE}}").join(window.GRILLES.orale ||
+          "Grille officielle : utilise la grille officielle actuelle d'évaluation de la production orale du DELF A2 (France Éducation international).");
     }
     function majPrompt() { zone.value = prompt(); }
     document.querySelectorAll('input[name="monologue"], input[name="interaction"]').forEach(function (r) {
