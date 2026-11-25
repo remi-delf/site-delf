@@ -114,7 +114,10 @@
         return;
       }
       var courts = zones.map(function (z, i) { return compter(z.value) < MIN ? "le texte " + (i + 1) : null; }).filter(Boolean);
-      var alerte = courts.length
+      var tropCourts = zones.map(function (z, i) { return compter(z.value) <= 29 ? "le texte " + (i + 1) : null; }).filter(Boolean);
+      var alerte = tropCourts.length
+        ? '<br><span class="ko">Attention : ' + tropCourts.join(" et ") + " " + (tropCourts.length > 1 ? "ont" : "a") + " 29 mots ou moins. À l'examen, c'est 0 à tous les critères de l'exercice.</span>"
+        : courts.length
         ? '<br><span class="ko">Attention : ' + courts.join(" et ") + " " + (courts.length > 1 ? "ont" : "a") + " moins de 60 mots. À l'examen, vous perdez des points.</span>"
         : "";
       var texte = prompt();

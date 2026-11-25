@@ -22,6 +22,6 @@ Réponds en français simple, au niveau A2 :
 4. Mes deux textes corrigés en entier. Garde mes idées et mon niveau : ne les réécris pas comme un niveau B1 ou B2.
 5. 3 conseils précis pour progresser.
 
-Règles : si un texte a moins de 60 mots ou ne répond pas au sujet, dis-le et applique la grille comme à l'examen. Ne donne pas de note plus haute pour être gentil.
+Règles : si un texte a moins de 60 mots ou ne répond pas au sujet, dis-le et applique la grille comme à l'examen. Si un texte a 29 mots ou moins, mets 0 à tous les critères de cet exercice (manque de matière évaluable). Ne donne pas de note plus haute pour être gentil.
 
 {{GRILLE}}`;
