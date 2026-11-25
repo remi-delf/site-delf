@@ -59,7 +59,7 @@
     // ----- Les deux exercices -----
     var zones = [];
     document.getElementById("exercices").innerHTML = sujet.exercices.map(function (x, i) {
-      return '<div class="carte"><h3>' + x.titre + ' <span class="pts">12,5 points</span></h3>' +
+      return '<div class="carte"><h3>' + x.titre + "</h3>" +
         '<p class="consigne">' + x.consigne + "</p>" +
         '<label class="cache" for="texte' + i + '">Votre texte pour l\'' + x.titre.toLowerCase() + "</label>" +
         '<textarea id="texte' + i + '" rows="9" spellcheck="false" placeholder="Écrivez votre texte ici…"></textarea>' +
@@ -96,7 +96,9 @@
       var valeurs = {
         "{{SUJET1}}": sujet.exercices[0].consigne, "{{MOTS1}}": String(compter(t[0])), "{{TEXTE1}}": t[0],
         "{{SUJET2}}": sujet.exercices[1].consigne, "{{MOTS2}}": String(compter(t[1])), "{{TEXTE2}}": t[1],
-        "{{LANGUE}}": phraseLangue, "{{GRILLE}}": window.GRILLES.ecrite
+        "{{LANGUE}}": phraseLangue,
+        "{{GRILLE}}": window.GRILLES.ecrite ||
+          "Grille officielle : utilise la grille officielle actuelle d'évaluation de la production écrite du DELF A2 (France Éducation international)."
       };
       var resultat = window.PROMPT_ECRITE;
       Object.keys(valeurs).forEach(function (cle) { resultat = resultat.split(cle).join(valeurs[cle]); });
