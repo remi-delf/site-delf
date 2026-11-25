@@ -84,7 +84,8 @@
                 (nbq > 1 ? "Vous aurez le temps de lire les questions" : "Vous aurez le temps de lire la question") +
                 ", puis vous entendrez le document deux fois.</p>" +
               '<div class="barre" hidden><span></span></div>' +
-              '<button class="commencer">▶ Commencer</button> ' +
+              (d.audio ? '<button class="commencer">▶ Commencer</button> '
+                       : '<p class="ko">🕓 Audio bientôt disponible.</p>') +
               '<button class="passer secondaire" hidden>Passer l\'attente</button>' +
             "</div>" +
             qs +

@@ -75,17 +75,17 @@ window.SUJET = {
 <p>À bientôt,<br>Martine Dubois, présidente de l'association</p>` }
       ],
       questions: [
-        { doc: "d1", s: "a", q: "Ce message vous invite à…", choix: ["un anniversaire.","une fête entre voisins.","une réunion de travail."], r: 1, p: 2,
+        { doc: "d1", s: "a", q: "Ce message vous invite à…", choix: ["un anniversaire.","une fête entre voisins.","une réunion de travail."], r: 1, p: 1,
           e: "L'association « organise la fête des voisins »." },
         { doc: "d1", s: "b", q: "S'il fait beau, où aura lieu la fête ?", choix: ["Dans le jardin.","Dans la salle commune.","Dans un restaurant."], r: 0, p: 1,
           e: "La fête a lieu « dans le jardin derrière l'immeuble ». La salle commune, c'est seulement s'il pleut." },
-        { doc: "d1", s: "c", q: "Qu'est-ce que chaque famille doit apporter ?", choix: ["Des boissons.","Du pain.","Un plat."], r: 2, p: 1.5,
+        { doc: "d1", s: "c", q: "Qu'est-ce que chaque famille doit apporter ?", choix: ["Des boissons.","Du pain.","Un plat."], r: 2, p: 1,
           e: "« Chaque famille apporte un plat ». Les boissons et le pain sont offerts par l'association." },
-        { doc: "d1", s: "d", q: "Qu'est-ce qui est prévu pour les enfants ?", choix: ["Un spectacle de magie.","Un atelier de dessin.","Un concours de danse."], r: 0, p: 0.5,
+        { doc: "d1", s: "d", q: "Qu'est-ce qui est prévu pour les enfants ?", choix: ["Un spectacle de magie.","Un atelier de dessin.","Un concours de danse."], r: 0, p: 1,
           e: "Un magicien fera un spectacle à 19 h 30." },
-        { doc: "d1", s: "e", q: "Pour participer, il faut…", choix: ["téléphoner à Martine.","s'inscrire avant le 7 juin.","payer 5 euros."], r: 1, p: 0.5,
+        { doc: "d1", s: "e", q: "Pour participer, il faut…", choix: ["téléphoner à Martine.","s'inscrire avant le 7 juin.","payer 5 euros."], r: 1, p: 1,
           e: "Il faut s'inscrire « avant le 7 juin » sur la feuille ou par courriel." },
-        { doc: "d1", s: "f", q: "L'association cherche des personnes pour…", choix: ["préparer les plats.","installer les tables.","jouer de la musique."], r: 1, p: 0.5,
+        { doc: "d1", s: "f", q: "L'association cherche des personnes pour…", choix: ["préparer les plats.","installer les tables.","jouer de la musique."], r: 1, p: 1,
           e: "Elle cherche « des volontaires pour installer les tables »." }
       ]
     },
@@ -139,10 +139,8 @@ window.SUJET = {
 <p>Pour le moment, 2 000 vélos sont disponibles, mais la ville espère en proposer le double l'année prochaine. <span data-s="e">Les étudiants peuvent aussi suivre un atelier gratuit, le mercredi après-midi, pour apprendre à réparer leur vélo.</span> Le succès est déjà là : en trois semaines, plus de 1 500 étudiants se sont inscrits.</p>` }
       ],
       questions: [
-        { doc: "d1", s: "a", q: "Cet article parle…", choix: ["d'une nouvelle piste cyclable.","d'un service de prêt de vélos.","d'une course de vélo."], r: 1, p: 0.5,
+        { doc: "d1", s: "a", q: "Cet article parle…", choix: ["d'une nouvelle piste cyclable.","d'un service de prêt de vélos.","d'une course de vélo."], r: 1, p: 1,
           e: "La ville « prête des vélos aux étudiants »." },
-        { doc: "d1", s: "a", q: "Vrai ou faux ? Le service est réservé aux étudiants de moins de 26 ans.", choix: ["Vrai","Faux"], r: 0, p: 0.5,
-          e: "Le texte parle des « étudiants de moins de 26 ans »." },
         { doc: "d1", s: "b", q: "Pour avoir un vélo, il faut…", choix: ["payer 50 euros par mois.","donner une caution.","acheter un casque."], r: 1, p: 1.5,
           e: "Il faut « payer une caution de 50 euros », rendue à la fin. Le prêt est gratuit." },
         { doc: "d1", s: "d", q: "Vrai ou faux ? Inès trouve le bus pratique le matin.", choix: ["Vrai","Faux"], r: 1, p: 1.5,
