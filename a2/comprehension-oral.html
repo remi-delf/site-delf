@@ -8,12 +8,55 @@
 </head>
 <body>
 <main>
-  <a class="retour" href="../index.html#a2">← Accueil</a>
+  <a class="retour" id="retour" href="../index.html#a2">← Accueil</a>
   <h1>DELF A2 – Compréhension de l'oral</h1>
-  <p class="sub">25 minutes · 4 exercices · 25 points</p>
-  <div class="encadre">
-    <p>Cette page sera construite à l'étape 4.</p>
-  </div>
+  <p class="sub" id="sous-titre">Choisissez un sujet.</p>
+
+  <details class="encadre rappel" id="rappel" open>
+    <summary>Comment se passe l'épreuve le jour de l'examen ?</summary>
+    <ul>
+      <li><b>Durée :</b> 25 minutes environ. <b>4 exercices</b>, <b>25 points</b>.</li>
+      <li><b>Documents :</b> annonces publiques, émissions de radio, messages sur un répondeur, dialogues. En tout, 5 minutes d'enregistrement au maximum.</li>
+      <li><b>Déroulé :</b> pour chaque document, vous avez un temps pour lire les questions. Puis vous entendez le document <b>deux fois</b>, avec une pause entre les deux écoutes pour répondre.</li>
+      <li><b>Questions :</b> choisir la bonne réponse (A, B ou C), associer, dire si c'est vrai ou faux.</li>
+      <li><b>Conseils :</b>
+        <ul>
+          <li>Lisez bien les questions avant l'écoute : elles vous disent quoi écouter.</li>
+          <li>Pendant la première écoute, répondez à ce que vous pouvez. Pendant la deuxième, vérifiez et complétez.</li>
+          <li>Faites attention aux chiffres, aux heures, aux lieux et aux mots comme « mais » ou « finalement ».</li>
+          <li>Répondez à toutes les questions : une réponse fausse n'enlève pas de points.</li>
+        </ul>
+      </li>
+    </ul>
+  </details>
+
+  <!-- Vue 1 : la liste des sujets (adresse sans ?sujet=) -->
+  <section id="vue-liste" hidden>
+    <h2>Les sujets</h2>
+    <ol class="liste-sujets" id="liste"></ol>
+  </section>
+
+  <!-- Vue 2 : un sujet (adresse avec ?sujet=1, ?sujet=2…) -->
+  <section id="vue-sujet" hidden>
+    <p class="aide">Mettez le son ou des écouteurs. Comme à l'examen, vous entendez chaque document deux fois, et la correction arrive après la deuxième écoute.</p>
+
+    <div id="app"></div>
+
+    <div id="total">Score total : 0</div>
+
+    <div id="fin" class="encadre" hidden>
+      <p class="resultat">Sujet terminé ! Votre note : <span id="resultat"></span></p>
+      <p class="boutons">
+        <a class="bouton" id="suivant" href="#">Sujet suivant</a>
+        <a class="bouton" href="comprehension-oral.html">Retour à la liste</a>
+      </p>
+      <p id="dernier" hidden>C'est le dernier sujet pour l'instant.</p>
+      <p><button class="secondaire" id="recommencer">Recommencer ce sujet</button></p>
+    </div>
+  </section>
 </main>
+<script src="../data/a2/liste.js"></script>
+<script src="../js/progression.js"></script>
+<script src="../js/oral.js"></script>
 </body>
 </html>

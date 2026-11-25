@@ -4,7 +4,7 @@
 
 window.LISTE_SUJETS = {
   "ecrits": 1,   // Compréhension des écrits : ecrits_01.js, ecrits_02.js…
-  "oral": 0,     // Compréhension de l'oral (étape 4)
+  "oral": 1,     // Compréhension de l'oral : oral_01.js, oral_02.js…
   "orale": 0,    // Production orale (étape 5)
   "ecrite": 0    // Production écrite (étape 6)
 };

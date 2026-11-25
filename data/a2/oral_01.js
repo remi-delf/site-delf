@@ -1,0 +1,40 @@
+// DELF A2 – Compréhension de l'oral – Sujet 1
+// Textes originaux. Audios créés par Rémi (Google AI Studio), rangés dans audio/.
+//
+// Comme pour la compréhension des écrits :
+// - chaque document a un fichier audio et sa transcription ;
+// - dans la transcription, <span data-s="a">…</span> marque la phrase
+//   qui sera surlignée à la correction (question : s:"a") ;
+// - lecture = secondes pour lire les questions avant la 1re écoute ;
+//   pause = secondes pour répondre entre les deux écoutes.
+//
+// Sujet en cours de construction : un seul document pour l'instant.
+// Le sujet complet aura 4 exercices et 25 points.
+
+window.SUJET = {
+  numero: 1,
+  exercices: [
+
+    // ---------------------------------------------------------------
+    {
+      titre: "Exercice 1",
+      points: 2,
+      consigne: "Vous êtes à la gare. Vous entendez cette annonce. Lisez la question, écoutez le document, puis répondez.",
+      documents: [
+        {
+          id: "d1",
+          titre: "Document 1 – Annonce à la gare",
+          audio: "oral01_ex1_doc1.wav",
+          lecture: 15,
+          pause: 20,
+          transcription: `<p>Mesdames et messieurs, le train pour Lyon partira avec vingt minutes de retard. <span data-s="a">Merci de rester sur le quai numéro 4.</span> Nous vous prions de nous excuser.</p>`
+        }
+      ],
+      questions: [
+        { doc: "d1", s: "a", q: "Qu'est-ce que vous devez faire ?",
+          choix: ["Changer de quai.", "Attendre sur le même quai.", "Prendre un autre train."], r: 1, p: 2,
+          e: "Le train a du retard, mais l'annonce dit : « Merci de rester sur le quai numéro 4. »" }
+      ]
+    }
+  ]
+};
