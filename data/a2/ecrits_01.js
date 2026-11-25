@@ -143,10 +143,10 @@ window.SUJET = {
           e: "La ville « prête des vélos aux étudiants »." },
         { doc: "d1", s: "b", q: "Pour avoir un vélo, il faut…", choix: ["payer 50 euros par mois.","donner une caution.","acheter un casque."], r: 1, p: 1.5,
           e: "Il faut « payer une caution de 50 euros », rendue à la fin. Le prêt est gratuit." },
-        { doc: "d1", s: "d", q: "Vrai ou faux ? Inès trouve le bus pratique le matin.", choix: ["Vrai","Faux"], r: 1, p: 1.5,
+        { doc: "d1", s: "c", q: "Vrai ou faux ? La mairie a créé ce service pour réduire la pollution.", choix: ["Vrai","Faux"], r: 0, p: 1.5,
+          e: "« La mairie veut réduire la pollution » et aider les jeunes qui ont peu d'argent." },
+        { doc: "d1", s: "d", q: "Selon Inès, le bus…", choix: ["est pratique et rapide.","coûte cher et il est souvent plein le matin.","ne va pas jusqu'à l'université."], r: 1, p: 1.5,
           e: "Inès dit que le bus « coûte cher » et qu'il est « souvent plein le matin »." },
-        { doc: "d1", s: "c", q: "Pourquoi la mairie a-t-elle créé ce service ?", choix: ["Pour réduire la pollution.","Pour vendre des vélos.","Pour organiser un festival."], r: 0, p: 1.5,
-          e: "« La mairie veut réduire la pollution » et aider les jeunes." },
         { doc: "d1", s: "e", q: "Le mercredi après-midi, les étudiants peuvent…", choix: ["rendre leur vélo.","apprendre à réparer leur vélo.","louer un deuxième vélo."], r: 1, p: 1.5,
           e: "Il y a « un atelier gratuit » pour « apprendre à réparer leur vélo »." }
       ]

@@ -314,3 +314,30 @@ textarea {
   font: inherit;
 }
 .ligne-note button { margin-top: 0; }
+
+/* ---------- Langues et avertissement ---------- */
+.langues { display: flex; flex-wrap: wrap; gap: 6px; margin: 14px 0 10px; }
+.langues button {
+  min-height: 40px;
+  margin: 0;
+  padding: 6px 14px;
+  border: 1px solid var(--line);
+  background: var(--card);
+  color: var(--ink);
+  font-size: 15px;
+}
+.langues button[aria-pressed="true"] { background: var(--blue); border-color: var(--blue); color: var(--on-blue); }
+.bienvenue p { margin: 0 0 8px; }
+.traduction { color: var(--muted); }
+.avertissement-accueil { font-size: 15px; }
+.avertissement-accueil p + p { margin-top: 6px; }
+footer.avertissement {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 16px 16px 30px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.5;
+}
+footer.avertissement p { margin: 0 0 4px; }
