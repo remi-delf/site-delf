@@ -122,12 +122,18 @@
       var jauge = barre.querySelector("span");
       var passer = bloc.querySelector(".passer");
       var audio = new Audio("../audio/" + d.audio);
-      var minuterie = null, arrete = false;
+      var minuterie = null, arrete = false, ecouteLancee = false;
 
       // Sur iPhone, le son doit être « débloqué » pendant le clic de l'élève.
+      // Si l'élève passe l'attente très vite, l'écoute a déjà commencé
+      // quand le déblocage se termine : on ne l'arrête pas.
       audio.muted = true;
       var deblocage = audio.play();
-      if (deblocage && deblocage.then) deblocage.then(function () { audio.pause(); audio.muted = false; audio.currentTime = 0; }, function () { audio.muted = false; });
+      function finDeblocage() {
+        if (!ecouteLancee) { audio.pause(); audio.currentTime = 0; }
+        audio.muted = false;
+      }
+      if (deblocage && deblocage.then) deblocage.then(finDeblocage, function () { audio.muted = false; });
       else audio.muted = false;
 
       audio.addEventListener("error", function () {
@@ -163,6 +169,8 @@
       }
 
       function ecouter(texte, suite) {
+        ecouteLancee = true;
+        audio.muted = false;
         etape.innerHTML = "<b>🔊 " + texte + "</b> Écoutez bien.";
         jauge.style.width = "0%";
         audio.currentTime = 0;

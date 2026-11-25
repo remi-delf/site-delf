@@ -36,31 +36,31 @@ window.SUJET = {
         {
           id: "d2",
           titre: "Document 2 – Dans un magasin",
-          audio: "",
+          audio: "oral01_ex1_doc2.mp3",
           transcription: `<p>Chers clients, notre magasin ferme dans dix minutes. Merci de passer aux caisses. <span data-s="a">Nous sommes ouverts demain dès 9 heures.</span></p>`
         },
         {
           id: "d3",
           titre: "Document 3 – Au musée",
-          audio: "",
+          audio: "oral01_ex1_doc3.mp3",
           transcription: `<p>Bienvenue au musée. Les visites guidées commencent toutes les heures. <span data-s="a">Pour vous inscrire, adressez-vous à l'accueil, à côté de l'entrée.</span></p>`
         },
         {
           id: "d4",
           titre: "Document 4 – Au cinéma",
-          audio: "",
+          audio: "oral01_ex1_doc4.mp3",
           transcription: `<p>Bonjour à tous. Le film va commencer. Nous vous demandons d'éteindre vos téléphones portables. <span data-s="a">Il est aussi interdit de manger dans la salle.</span> Bonne séance !</p>`
         },
         {
           id: "d5",
           titre: "Document 5 – À la piscine",
-          audio: "",
+          audio: "oral01_ex1_doc5.mp3",
           transcription: `<p>Attention, s'il vous plaît. <span data-s="a">La piscine extérieure est fermée aujourd'hui à cause de l'orage.</span> La piscine intérieure reste ouverte jusqu'à 20 heures.</p>`
         },
         {
           id: "d6",
           titre: "Document 6 – Au supermarché",
-          audio: "",
+          audio: "oral01_ex1_doc6.mp3",
           transcription: `<p><span data-s="a">Cette semaine seulement, au rayon boulangerie, deux baguettes achetées, la troisième est offerte !</span> Profitez-en vite !</p>`
         }
       ],
