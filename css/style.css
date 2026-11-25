@@ -341,3 +341,10 @@ footer.avertissement {
   line-height: 1.5;
 }
 footer.avertissement p { margin: 0 0 4px; }
+
+/* Production écrite */
+.carte .consigne { font-style: normal; }
+.compteur { margin: 4px 0 0 !important; color: var(--muted); font-size: 15px; text-align: right; }
+.compteur.assez { color: var(--ok); font-weight: bold; }
+.cache { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+#exercices textarea { font-size: 17px; background: var(--card); }

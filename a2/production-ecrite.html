@@ -8,13 +8,81 @@
 </head>
 <body>
 <main>
-  <a class="retour" href="../index.html#a2">← Accueil</a>
+  <a class="retour" id="retour" href="../index.html#a2">← Accueil</a>
   <h1>DELF A2 – Production écrite</h1>
-  <p class="sub">45 minutes · 2 exercices · 25 points</p>
-  <div class="encadre">
-    <p>Cette page sera construite à l'étape 6.</p>
-  </div>
+  <p class="sub" id="sous-titre">Choisissez un sujet.</p>
+
+  <details class="encadre rappel" id="rappel" open>
+    <summary>Comment se passe l'épreuve le jour de l'examen ?</summary>
+    <ul>
+      <li><b>Durée :</b> 45 minutes. <b>2 exercices</b>, <b>25 points</b> (12,5 points par exercice).</li>
+      <li><b>Exercice 1 :</b> raconter ou décrire un événement, une expérience personnelle (par exemple dans un message ou sur un blog).</li>
+      <li><b>Exercice 2 :</b> écrire un message pour inviter, remercier, s'excuser, demander, informer, féliciter…</li>
+      <li><b>Longueur :</b> 60 mots minimum pour chaque texte.</li>
+      <li><b>Notation :</b> pour chaque texte, 5 critères : réalisation de la tâche, cohérence et cohésion, adéquation sociolinguistique (saluer, dire au revoir, tutoyer ou vouvoyer…), lexique, morphosyntaxe (grammaire).</li>
+      <li><b>Conseils :</b>
+        <ul>
+          <li>Lisez bien la consigne et répondez à toutes ses demandes.</li>
+          <li>Commencez et terminez votre message comme une vraie lettre : « Salut Lucas, » … « À bientôt, ».</li>
+          <li>Reliez vos phrases : « et », « mais », « parce que », « d'abord », « ensuite », « enfin ».</li>
+          <li>Gardez 5 minutes pour relire : accords, conjugaisons, accents.</li>
+        </ul>
+      </li>
+    </ul>
+  </details>
+
+  <!-- Vue 1 : la liste des sujets -->
+  <section id="vue-liste" hidden>
+    <h2>Les sujets</h2>
+    <ol class="liste-sujets" id="liste"></ol>
+  </section>
+
+  <!-- Vue 2 : un sujet -->
+  <section id="vue-sujet" hidden>
+    <h2>1. Écrivez vos deux textes</h2>
+    <p class="aide">Vos textes sont gardés sur cet appareil, même si vous fermez la page.</p>
+    <div id="exercices"></div>
+
+    <h2>2. Faites corriger vos textes par une IA</h2>
+    <div class="carte">
+      <ol class="etapes">
+        <li>Cliquez sur « Copier le prompt » : il contient les sujets, vos deux textes et la grille officielle.</li>
+        <li>Ouvrez Claude ou ChatGPT, collez le texte et envoyez-le.</li>
+        <li>L'IA vous donne une note sur 25, vos points forts, vos erreurs corrigées, vos textes corrigés et des conseils.</li>
+      </ol>
+      <p id="info-langue" class="aide"></p>
+      <p><button id="copier">📋 Copier le prompt</button></p>
+      <p id="copie" aria-live="polite"></p>
+      <details class="voir-prompt">
+        <summary>Voir le texte du prompt</summary>
+        <textarea id="texte-prompt" readonly rows="14"></textarea>
+      </details>
+    </div>
+
+    <h2>3. Enregistrez votre note</h2>
+    <div class="carte">
+      <p>Écrivez la note sur 25 donnée par l'IA. Elle apparaîtra dans la liste des sujets.</p>
+      <p class="ligne-note">
+        <input id="note" type="text" inputmode="decimal" placeholder="ex. 18,5" aria-label="Note sur 25"> <span>/ 25</span>
+        <button id="enregistrer">Enregistrer</button>
+      </p>
+      <p id="msg-note" aria-live="polite"></p>
+    </div>
+
+    <div id="fin" class="encadre" hidden>
+      <p class="boutons">
+        <a class="bouton" id="suivant" href="#">Sujet suivant</a>
+        <a class="bouton" href="production-ecrite.html">Retour à la liste</a>
+      </p>
+      <p id="dernier" hidden>C'est le dernier sujet pour l'instant.</p>
+    </div>
+  </section>
 </main>
+<script src="../data/a2/liste.js"></script>
+<script src="../data/a2/grilles.js"></script>
+<script src="../data/a2/prompt_ecrite.js"></script>
+<script src="../js/progression.js"></script>
 <script src="../js/langues.js"></script>
+<script src="../js/ecrite.js"></script>
 </body>
 </html>
