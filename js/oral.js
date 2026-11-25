@@ -4,8 +4,10 @@
 //
 // Déroulé de chaque document, comme à l'examen :
 // 1. temps pour lire les questions ; 2. première écoute ;
-// 3. temps pour répondre ; 4. deuxième écoute ;
-// 5. correction (bouton « Valider »), avec explication et transcription.
+// 3. temps pour répondre ; 4. deuxième écoute ; 5. temps pour compléter ;
+// 6. correction (bouton « Valider »), avec explication et transcription.
+// Les temps viennent du fichier du sujet (lecture, pause, apres) ;
+// sinon, temps officiels : exercices 1-2 = 15/10/10 s, exercices 3-4 = 30/30/30 s.
 // L'élève ne peut pas réécouter librement, comme le jour de l'examen.
 
 (function () {
@@ -177,14 +179,21 @@
         });
       }
 
-      attendre(d.lecture || 15, nbq > 1 ? "Lisez les questions." : "Lisez la question.", function () {
+      var officiel = +bloc.dataset.k < 2 ? [15, 10, 10] : [30, 30, 30];
+      var lecture = d.lecture || x.lecture || officiel[0];
+      var pause = d.pause || x.pause || officiel[1];
+      var apres = d.apres || x.apres || officiel[2];
+
+      attendre(lecture, nbq > 1 ? "Lisez les questions." : "Lisez la question.", function () {
         ecouter("Première écoute.", function () {
-          attendre(d.pause || 20, "Répondez. La deuxième écoute commence dans", function () {
+          attendre(pause, "Répondez. La deuxième écoute commence dans", function () {
             ecouter("Deuxième écoute.", function () {
-              etape.innerHTML = "<b>Écoutes terminées.</b> Vérifiez vos réponses, puis cliquez sur « Valider ».";
-              barre.hidden = true;
-              arreter();
-              bloc.querySelector("button.valider").disabled = false;
+              attendre(apres, "Complétez vos réponses.", function () {
+                etape.innerHTML = "<b>Écoutes terminées.</b> Vérifiez vos réponses, puis cliquez sur « Valider ».";
+                barre.hidden = true;
+                arreter();
+                bloc.querySelector("button.valider").disabled = false;
+              });
             });
           });
         });
