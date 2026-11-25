@@ -280,3 +280,37 @@ button.secondaire {
 .transcription { margin-top: 14px; padding-top: 10px; border-top: 1px solid var(--line); }
 .transcription h4 { margin: 0 0 6px; font-size: 16px; color: var(--muted); }
 .transcription p { margin: 0 0 8px; }
+
+/* ---------- Production orale / écrite ---------- */
+.carte { margin-top: 12px; padding: 16px 18px; border-radius: 10px; background: var(--card); }
+.carte h3 { margin: 0 0 6px; font-size: 18px; }
+.carte p { margin: 0 0 10px; }
+.carte p:last-child { margin-bottom: 0; }
+.choix label span { flex: 1; }
+.prepa { text-align: center; }
+.chrono { font-size: 40px; font-weight: bold; font-variant-numeric: tabular-nums; color: var(--blue); }
+.etapes { margin: 0 0 12px; padding-left: 22px; }
+.etapes li { margin: 4px 0; }
+.voir-prompt summary { cursor: pointer; color: var(--blue); min-height: 32px; }
+textarea {
+  width: 100%;
+  margin-top: 8px;
+  padding: 10px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--bg);
+  color: var(--ink);
+  font: 15px/1.5 Arial, Helvetica, sans-serif;
+}
+.ligne-note { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.ligne-note input {
+  width: 110px;
+  min-height: 44px;
+  padding: 8px 10px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--bg);
+  color: var(--ink);
+  font: inherit;
+}
+.ligne-note button { margin-top: 0; }

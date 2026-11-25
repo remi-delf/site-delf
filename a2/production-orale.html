@@ -8,12 +8,92 @@
 </head>
 <body>
 <main>
-  <a class="retour" href="../index.html#a2">← Accueil</a>
+  <a class="retour" id="retour" href="../index.html#a2">← Accueil</a>
   <h1>DELF A2 – Production orale</h1>
-  <p class="sub">6 à 8 minutes · 10 minutes de préparation · 25 points</p>
-  <div class="encadre">
-    <p>Cette page sera construite à l'étape 5.</p>
-  </div>
+  <p class="sub" id="sous-titre">Choisissez un sujet.</p>
+
+  <details class="encadre rappel" id="rappel" open>
+    <summary>Comment se passe l'épreuve le jour de l'examen ?</summary>
+    <ul>
+      <li><b>Durée :</b> 6 à 8 minutes, avec <b>10 minutes de préparation</b> avant. <b>3 parties</b>, <b>25 points</b>.</li>
+      <li><b>1. Entretien dirigé</b> (1 minute 30 environ, sans préparation) : vous vous présentez et vous répondez à des questions sur vous.</li>
+      <li><b>2. Monologue suivi</b> (2 minutes environ) : vous parlez seul(e) d'un sujet de la vie quotidienne.</li>
+      <li><b>3. Exercice en interaction</b> (3 à 4 minutes) : vous jouez une situation de la vie quotidienne avec l'examinateur.</li>
+      <li>Pour les parties 2 et 3, vous tirez au sort deux sujets et vous en choisissez un.</li>
+      <li><b>Conseils :</b>
+        <ul>
+          <li>Pendant la préparation, notez des mots-clés, pas des phrases entières : vous ne pourrez pas lire vos notes.</li>
+          <li>Saluez l'examinateur et utilisez les formules de politesse.</li>
+          <li>Faites des phrases simples et reliez-les avec « et », « mais », « parce que », « après ».</li>
+          <li>Si vous ne comprenez pas, demandez : « Vous pouvez répéter, s'il vous plaît ? »</li>
+        </ul>
+      </li>
+    </ul>
+  </details>
+
+  <!-- Vue 1 : la liste des sujets -->
+  <section id="vue-liste" hidden>
+    <h2>Les sujets</h2>
+    <ol class="liste-sujets" id="liste"></ol>
+  </section>
+
+  <!-- Vue 2 : un sujet -->
+  <section id="vue-sujet" hidden>
+    <h2>1. Choisissez vos sujets</h2>
+    <div class="carte">
+      <h3>Partie 2 – Monologue suivi</h3>
+      <div class="choix" id="choix-monologue"></div>
+    </div>
+    <div class="carte">
+      <h3>Partie 3 – Exercice en interaction</h3>
+      <div class="choix" id="choix-interaction"></div>
+    </div>
+
+    <h2>2. Préparez-vous (facultatif)</h2>
+    <div class="carte prepa">
+      <p>Comme à l'examen, vous avez 10 minutes pour préparer les parties 2 et 3.</p>
+      <p class="chrono" id="chrono">10:00</p>
+      <button id="prepa">▶ Commencer les 10 minutes</button>
+    </div>
+
+    <h2>3. Passez l'examen avec une IA</h2>
+    <div class="carte">
+      <ol class="etapes">
+        <li>Cliquez sur « Copier le prompt ».</li>
+        <li>Ouvrez Claude ou ChatGPT, collez le texte et envoyez-le.</li>
+        <li>Si possible, passez en <b>mode vocal</b> : l'IA joue l'examinateur et vous lui parlez, comme le jour de l'examen.</li>
+        <li>À la fin, l'IA vous donne une note sur 25, vos points forts, vos erreurs corrigées et des conseils.</li>
+      </ol>
+      <p><button id="copier">📋 Copier le prompt</button></p>
+      <p id="copie" aria-live="polite"></p>
+      <details class="voir-prompt">
+        <summary>Voir le texte du prompt</summary>
+        <textarea id="texte-prompt" readonly rows="14"></textarea>
+      </details>
+    </div>
+
+    <h2>4. Enregistrez votre note</h2>
+    <div class="carte">
+      <p>Écrivez la note sur 25 donnée par l'IA. Elle apparaîtra dans la liste des sujets.</p>
+      <p class="ligne-note">
+        <input id="note" type="text" inputmode="decimal" placeholder="ex. 18,5" aria-label="Note sur 25"> <span>/ 25</span>
+        <button id="enregistrer">Enregistrer</button>
+      </p>
+      <p id="msg-note" aria-live="polite"></p>
+    </div>
+
+    <div id="fin" class="encadre" hidden>
+      <p class="boutons">
+        <a class="bouton" id="suivant" href="#">Sujet suivant</a>
+        <a class="bouton" href="production-orale.html">Retour à la liste</a>
+      </p>
+      <p id="dernier" hidden>C'est le dernier sujet pour l'instant.</p>
+    </div>
+  </section>
 </main>
+<script src="../data/a2/liste.js"></script>
+<script src="../data/a2/prompt_orale.js"></script>
+<script src="../js/progression.js"></script>
+<script src="../js/orale.js"></script>
 </body>
 </html>
