@@ -103,13 +103,13 @@ window.SUJET = {
           e: "Il faut « réserver [son] billet sur Internet avant [son] arrivée ». Le téléphone sert seulement à montrer le billet à l'entrée." },
         { doc: "d1", s: "b", q: "À quelle heure le musée ferme-t-il ?", choix: ["À 17 h 15.","À 18 h.","À 19 h."], r: 1, p: 2,
           e: "Le musée est ouvert « de 10 h à 18 h ». 17 h 15, c'est l'heure de la dernière entrée, pas de la fermeture." },
-        { doc: "d1", s: "c", q: "Où peut-on laisser son sac à dos ?", choix: ["Dans la salle d'exposition.","Dans le train.","Au vestiaire."], r: 2, p: 0.5,
+        { doc: "d1", s: "c", q: "Où peut-on laisser son sac à dos ?", choix: ["Dans la salle d'exposition.","À l'entrée du musée.","Au vestiaire."], r: 2, p: 0.5,
           e: "Les sacs à dos sont interdits dans les salles, « mais vous pouvez les laisser gratuitement au vestiaire »." },
         { doc: "d2", s: "a", q: "De quel quai part exceptionnellement le train pour Namur ?", choix: ["Du quai 2.","Du quai 4.","Du quai 6."], r: 1, p: 1,
           e: "« Le train pour Namur partira exceptionnellement du quai 4 aujourd'hui. »" },
         { doc: "d2", s: "b", q: "Que doivent faire les voyageurs qui vont à Ottignies ?", choix: ["Prendre le train de 16 h 05.","Descendre à Gembloux.","Attendre le train de 16 h 20."], r: 0, p: 1,
           e: "Ils « doivent prendre le train de 16 h 05 ». Le train de 16 h 20 s'arrête seulement à Gembloux et Namur." },
-        { doc: "d2", s: "c", q: "Où peut-on trouver un agent pour aider avec les bagages ?", choix: ["Devant le musée.","À côté du quai 4.","Près de l'escalier principal."], r: 2, p: 1,
+        { doc: "d2", s: "c", q: "Où peut-on trouver un agent pour aider avec les bagages ?", choix: ["Dans le train de 16 h 20.","À côté du quai 4.","Près de l'escalier principal."], r: 2, p: 1,
           e: "« Un agent est disponible près de l'escalier principal. »" }
       ]
     },
