@@ -1,5 +1,5 @@
 // DELF A2 – Production orale – Sujet 7
-// Textes originaux (proposés avec l'aide de ChatGPT, à valider par Rémi).
+// Textes originaux (proposés avec l'aide de ChatGPT, validés par Rémi).
 // Comme à l'examen, l'élève choisit 1 sujet sur 2 pour le monologue
 // et 1 sujet sur 2 pour l'exercice en interaction.
 // L'entretien dirigé est le même pour tous (questions sur soi).
