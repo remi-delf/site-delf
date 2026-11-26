@@ -83,8 +83,8 @@ window.SUJET = {
           e: "Le mercredi, il travaille seulement le matin : « je peux faire mes courses l'après-midi ». Les gâteaux, c'est le vendredi." },
         { doc: "d1", s: "e", q: "Quel jour la boulangerie ferme-t-elle le plus tôt ?", choix: ["Le vendredi.","Le samedi.","Le mercredi."], r: 1, p: 1,
           e: "Elle ferme à 18 heures, « sauf le samedi où elle ferme à seize heures ». Le mercredi, c'est Éric qui termine à midi, pas la boulangerie qui ferme." },
-        { doc: "d1", s: "f", q: "Pourquoi Éric aime-t-il particulièrement son équipe ?", choix: ["Parce que ses collègues sont sympathiques.","Parce qu'ils travaillent seulement le matin.","Parce qu'ils habitent près de chez lui."], r: 0, p: 1,
-          e: "Éric écrit que « l'équipe est vraiment sympathique »." }
+        { doc: "d1", s: "f", q: "Pourquoi Éric espère-t-il garder ce travail longtemps ?", choix: ["Parce que ses collègues sont sympathiques.","Parce qu'ils travaillent seulement le matin.","Parce qu'ils habitent près de chez lui."], r: 0, p: 1,
+          e: "« J'espère garder ce travail longtemps, car l'équipe est vraiment sympathique. »" }
       ]
     },
 
