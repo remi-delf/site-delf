@@ -175,7 +175,6 @@ window.SUJET = {
       points: 7,
       lecture: 30, pause: 30, apres: 30,
       consigne: "Vous écoutez 4 dialogues. Associez chaque dialogue à une situation. Attention : il y a 6 situations mais seulement 4 dialogues.",
-      choixCompacts: true,
       documents: [
         {
           id: "d1",
