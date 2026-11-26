@@ -13,7 +13,7 @@
 //   apres   = après la 2e écoute, pour compléter les réponses.
 //   Exercices 1 et 2 : 15 / 10 / 10. Exercices 3 et 4 : 30 / 30 / 30.
 //
-// Sujet en cours de construction : exercice 1 seulement pour l'instant.
+// Sujet en cours de construction : exercices 1 et 2 pour l'instant.
 // Le sujet complet aura 4 exercices et 25 points.
 
 window.SUJET = {
@@ -83,6 +83,54 @@ window.SUJET = {
         { doc: "d6", s: "a", q: "Qu'est-ce qui est en promotion ?",
           choix: ["Le pain.", "Les gâteaux.", "Le fromage."], r: 0, p: 1,
           e: "La promotion est « au rayon boulangerie » : pour deux baguettes achetées, la troisième est offerte. Les baguettes, c'est du pain." }
+      ]
+    },
+
+    // ---------------------------------------------------------------
+    {
+      titre: "Exercice 2 – À la radio",
+      points: 6,
+      lecture: 15, pause: 10, apres: 10,
+      consigne: "Vous écoutez la radio. Lisez les questions, écoutez, puis répondez.",
+      documents: [
+        {
+          id: "d1",
+          titre: "Document 1 – Un festival",
+          audio: "oral01_ex2_doc1.mp3",
+          transcription: `<p><span data-s="a">Samedi, dans le parc de la ville, venez assister au grand festival de danse africaine.</span> Le spectacle commence à 15 heures. <span data-s="b">L'entrée coûte 5 euros, et c'est gratuit pour les enfants de moins de 12 ans.</span></p>`
+        },
+        {
+          id: "d2",
+          titre: "Document 2 – Une salle de sport",
+          audio: "oral01_ex2_doc2.mp3",
+          transcription: `<p>Bonne nouvelle pour les sportifs : la ville ouvre une nouvelle salle de sport au centre-ville. <span data-s="a">Elle est ouverte sept jours sur sept, de 7 heures à 22 heures.</span> <span data-s="b">Et ce mois-ci, le premier cours de yoga est gratuit.</span></p>`
+        },
+        {
+          id: "d3",
+          titre: "Document 3 – Un café original",
+          audio: "oral01_ex2_doc3.mp3",
+          transcription: `<p><span data-s="a">Une idée originale à Bordeaux : un café où l'on peut réparer soi-même ses objets cassés, avec l'aide de bénévoles.</span> <span data-s="b">Le samedi après-midi, on vous apprend aussi à réparer votre vélo.</span></p>`
+        }
+      ],
+      questions: [
+        { doc: "d1", s: "a", q: "De quel événement parle la journaliste ?",
+          choix: ["Un concert.", "Un spectacle de danse.", "Une pièce de théâtre."], r: 1, p: 0.5,
+          e: "La journaliste parle du « grand festival de danse africaine »." },
+        { doc: "d1", s: "b", q: "Qui ne paie pas ?",
+          choix: ["Les étudiants.", "Les personnes âgées.", "Les jeunes enfants."], r: 2, p: 1,
+          e: "C'est « gratuit pour les enfants de moins de 12 ans »." },
+        { doc: "d2", s: "a", q: "Quand la salle est-elle ouverte ?",
+          choix: ["Tous les jours.", "Du lundi au vendredi.", "Seulement le week-end."], r: 0, p: 1,
+          e: "Elle est ouverte « sept jours sur sept » : c'est tous les jours." },
+        { doc: "d2", s: "b", q: "Qu'est-ce qui est gratuit ce mois-ci ?",
+          choix: ["Un cours de natation.", "Un cours de yoga.", "Un cours de danse."], r: 1, p: 1,
+          e: "« Ce mois-ci, le premier cours de yoga est gratuit. »" },
+        { doc: "d3", s: "a", q: "Pourquoi ce café est-il spécial ?",
+          choix: ["On peut y réparer ses objets.", "Les boissons sont gratuites.", "Il est ouvert toute la nuit."], r: 0, p: 2,
+          e: "Dans ce café, « on peut réparer soi-même ses objets cassés »." },
+        { doc: "d3", s: "b", q: "Qu'est-ce qu'on apprend le samedi ?",
+          choix: ["À cuisiner.", "À réparer un vélo.", "À dessiner."], r: 1, p: 0.5,
+          e: "« Le samedi après-midi, on vous apprend aussi à réparer votre vélo. »" }
       ]
     }
   ]
