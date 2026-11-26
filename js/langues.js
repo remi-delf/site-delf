@@ -11,25 +11,25 @@ window.Langues = (function () {
   var TEXTES = {
     fr: {
       nom: "Français", lang: "fr",
-      accueil: "Entraînez-vous au DELF avec des sujets complets, au format de l'examen : compréhension de l'oral, compréhension des écrits, production écrite et production orale. Vos scores sont enregistrés sur cet appareil.",
+      accueil: "Entraînez-vous au DELF / DALF avec des sujets complets, au format de l'examen : compréhension de l'oral, compréhension des écrits, production écrite et production orale. Vos scores sont enregistrés sur cet appareil.",
       consignes: "Les consignes des exercices sont en français, comme le jour de l'examen.",
       avertissement: "Site d'entraînement indépendant, non officiel, sans lien avec France Éducation international. Les sujets sont originaux, créés avec l'aide de l'IA et relus."
     },
     en: {
       nom: "English", lang: "en",
-      accueil: "Practise for the DELF with complete papers in the exam format: listening, reading, writing and speaking. Your scores are saved on this device.",
+      accueil: "Practise for the DELF / DALF with complete papers in the exam format: listening, reading, writing and speaking. Your scores are saved on this device.",
       consignes: "The instructions for the exercises are in French, as on the day of the exam.",
       avertissement: "Independent, unofficial practice website, not affiliated with France Éducation international. The papers are original, created with the help of AI and reviewed."
     },
     zh: {
       nom: "中文", lang: "zh-Hans",
-      accueil: "使用与考试格式相同的完整试题练习 DELF：听力理解、阅读理解、书面表达和口语表达。你的成绩会保存在这台设备上。",
+      accueil: "使用与考试格式相同的完整试题练习 DELF / DALF：听力理解、阅读理解、书面表达和口语表达。你的成绩会保存在这台设备上。",
       consignes: "练习的题目要求是法语的，和考试当天一样。",
       avertissement: "本网站是独立的非官方练习网站，与法国国际教育研究中心（France Éducation international）没有任何关系。所有试题均为原创，在人工智能的帮助下编写，并经过审校。"
     },
     vi: {
       nom: "Tiếng Việt", lang: "vi",
-      accueil: "Luyện thi DELF với các đề thi đầy đủ, theo đúng định dạng của kỳ thi: nghe hiểu, đọc hiểu, viết và nói. Điểm của bạn được lưu trên thiết bị này.",
+      accueil: "Luyện thi DELF / DALF với các đề thi đầy đủ, theo đúng định dạng của kỳ thi: nghe hiểu, đọc hiểu, viết và nói. Điểm của bạn được lưu trên thiết bị này.",
       consignes: "Yêu cầu của các bài tập được viết bằng tiếng Pháp, giống như trong ngày thi.",
       avertissement: "Trang web luyện thi độc lập, không chính thức, không liên quan đến France Éducation international. Các đề thi là bản gốc, được soạn với sự hỗ trợ của AI và đã được kiểm tra lại."
     }
