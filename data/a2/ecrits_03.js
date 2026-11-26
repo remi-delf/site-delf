@@ -42,7 +42,7 @@ window.SUJET = {
 <p><span data-s="a">Petit appartement d'une chambre, situé près de la gare.</span> Cuisine équipée, salle de bains et petit balcon. L'appartement est disponible immédiatement. Loyer : 690 euros par mois, charges comprises.</p>` },
         { id: "d5", html: `<h3>Annonce 5 – Club de sport</h3>
 <p><span data-s="a">Vous cherchez une activité après le travail ? Venez découvrir notre club de badminton. Les entraînements ont lieu le mardi et le jeudi de 19 h à 20 h 30.</span> Une séance d'essai gratuite est proposée.</p>` },
-        { id: "d6", html: `<h3>Annonce 6 – Vacances en famille</h3>
+        { id: "d6", html: `<h3>Annonce 6 – Emploi d'été</h3>
 <p><span data-s="a">La mairie recherche des animateurs pour les activités des enfants pendant les vacances d'été.</span> Travail du lundi au vendredi, de 9 h à 17 h. Une première expérience avec les enfants est souhaitée.</p>` }
       ],
       questions: [
@@ -67,7 +67,7 @@ window.SUJET = {
       points: 6,
       consigne: "Vous recevez ce message d'une amie. Lisez-le et répondez aux questions.",
       documents: [
-        { id: "d1", html: `<h3>Une nouvelle vie à Montclair</h3>
+        { id: "d1", html: `<h3>Mon nouveau quartier</h3>
 <p>Bonjour Léa,</p>
 <p>Je t'écris pour te parler de mon nouveau quartier. <span data-s="a">J'habite maintenant près du centre-ville, dans un petit appartement avec un balcon.</span> <span data-s="b">J'aime beaucoup le quartier parce qu'il y a plusieurs magasins et un grand parc à cinq minutes à pied.</span> <span data-s="c">Le samedi matin, je vais souvent au marché avec ma voisine, Clara.</span> Nous achetons des fruits, du fromage et parfois des fleurs. Il y a aussi une petite bibliothèque près de chez moi. <span data-s="d">Elle organise un club de lecture le mercredi soir, et je voudrais y participer.</span> <span data-s="e">Le seul problème, c'est le bruit dans la rue le vendredi soir.</span> Heureusement, mon appartement est au troisième étage et les fenêtres ferment bien. <span data-s="f">Si tu viens me voir le mois prochain, je pourrai te montrer le parc et le marché.</span> Dis-moi quel week-end te convient.</p>
 <p>À bientôt,<br>Nina</p>` }
