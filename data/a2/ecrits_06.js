@@ -3,6 +3,7 @@
 // Corrections de Rémi : exercice 2, l'auteur du courriel s'appelle Nicolas ;
 // exercice 3, question 4 : « De quelle heure à quelle heure… » ;
 // une phrase ajoutée dans l'exercice 2 et dans l'exercice 4 pour respecter les longueurs officielles.
+// Exercice 1 : ordre des personnes mélangé (les réponses ne suivent pas l'ordre des annonces).
 // Ne jamais copier les vrais sujets.
 //
 // Même rangement que ecrits_01.js :
@@ -22,14 +23,14 @@ window.SUJET = {
       consigne: "Vous lisez ces annonces dans le journal de votre quartier. Ces personnes cherchent une activité, un service ou un travail. Pour chaque annonce, choisissez la personne qui correspond. Attention : deux personnes ne correspondent à aucune annonce.",
       intro: `<h3>Les personnes</h3>
 <ul class="personnes">
-<li><b>A. Antoine</b>, 20 ans, cherche une activité pour apprendre à conduire une voiture. Il est disponible le samedi matin.</li>
-<li><b>B. Manon</b>, 27 ans, cherche un emploi pour garder des enfants le mercredi après-midi.</li>
-<li><b>C. David</b>, 42 ans, veut apprendre à utiliser un ordinateur. Il est disponible le lundi soir.</li>
-<li><b>D. Clara</b>, 18 ans, cherche un cours de langue espagnole pour débutants le samedi après-midi.</li>
-<li><b>E. Julien</b>, 35 ans, cherche un service pour faire nettoyer sa voiture le samedi matin.</li>
-<li><b>F. Sophie</b>, 30 ans, cherche une activité pour apprendre à jouer de la guitare le mardi soir.</li>
-<li><b>G. Romain</b>, 24 ans, cherche un cours de natation pour adultes le jeudi soir.</li>
-<li><b>H. Amélie</b>, 37 ans, cherche un endroit où faire garder son chien pendant une journée.</li>
+<li><b>A. Clara</b>, 18 ans, cherche un cours de langue espagnole pour débutants le samedi après-midi.</li>
+<li><b>B. Romain</b>, 24 ans, cherche un cours de natation pour adultes le jeudi soir.</li>
+<li><b>C. Julien</b>, 35 ans, cherche un service pour faire nettoyer sa voiture le samedi matin.</li>
+<li><b>D. Antoine</b>, 20 ans, cherche une activité pour apprendre à conduire une voiture. Il est disponible le samedi matin.</li>
+<li><b>E. Sophie</b>, 30 ans, cherche une activité pour apprendre à jouer de la guitare le mardi soir.</li>
+<li><b>F. Manon</b>, 27 ans, cherche un emploi pour garder des enfants le mercredi après-midi.</li>
+<li><b>G. Amélie</b>, 37 ans, cherche un endroit où faire garder son chien pendant une journée.</li>
+<li><b>H. David</b>, 42 ans, veut apprendre à utiliser un ordinateur. Il est disponible le lundi soir.</li>
 </ul>`,
       choixCompacts: true,
       documents: [
@@ -47,17 +48,17 @@ window.SUJET = {
 <p><span data-s="a">Vous souhaitez apprendre les bases de la guitare ? Cours pour débutants le mardi soir.</span> Instrument disponible sur place pour les premières séances.</p>` }
       ],
       questions: [
-        { doc: "d1", s: "a", q: "L'annonce 1 correspond à…", choix: ["Antoine","Manon","David","Clara","Julien","Sophie","Romain","Amélie"], r: 0, p: 1.5,
+        { doc: "d1", s: "a", q: "L'annonce 1 correspond à…", choix: ["Clara","Romain","Julien","Antoine","Sophie","Manon","Amélie","David"], r: 3, p: 1.5,
           e: "Antoine, 20 ans, veut apprendre à conduire le samedi matin : l'auto-école propose des leçons « le samedi matin », à partir de 18 ans. Attention : Julien est aussi libre le samedi matin, mais il veut faire nettoyer sa voiture." },
-        { doc: "d2", s: "a", q: "L'annonce 2 correspond à…", choix: ["Antoine","Manon","David","Clara","Julien","Sophie","Romain","Amélie"], r: 1, p: 1.5,
+        { doc: "d2", s: "a", q: "L'annonce 2 correspond à…", choix: ["Clara","Romain","Julien","Antoine","Sophie","Manon","Amélie","David"], r: 5, p: 1.5,
           e: "Manon cherche un emploi pour garder des enfants le mercredi après-midi : la famille cherche quelqu'un « chaque mercredi après-midi »." },
-        { doc: "d3", s: "a", q: "L'annonce 3 correspond à…", choix: ["Antoine","Manon","David","Clara","Julien","Sophie","Romain","Amélie"], r: 2, p: 0.5,
+        { doc: "d3", s: "a", q: "L'annonce 3 correspond à…", choix: ["Clara","Romain","Julien","Antoine","Sophie","Manon","Amélie","David"], r: 7, p: 0.5,
           e: "David veut apprendre l'informatique le lundi soir : le cours a lieu « le lundi de dix-huit heures trente à vingt heures »." },
-        { doc: "d4", s: "a", q: "L'annonce 4 correspond à…", choix: ["Antoine","Manon","David","Clara","Julien","Sophie","Romain","Amélie"], r: 3, p: 1,
+        { doc: "d4", s: "a", q: "L'annonce 4 correspond à…", choix: ["Clara","Romain","Julien","Antoine","Sophie","Manon","Amélie","David"], r: 0, p: 1,
           e: "Clara, 18 ans, cherche un cours d'espagnol pour débutants le samedi après-midi : le cours est pour les « adultes qui commencent la langue », « le samedi après-midi »." },
-        { doc: "d5", s: "a", q: "L'annonce 5 correspond à…", choix: ["Antoine","Manon","David","Clara","Julien","Sophie","Romain","Amélie"], r: 4, p: 1,
+        { doc: "d5", s: "a", q: "L'annonce 5 correspond à…", choix: ["Clara","Romain","Julien","Antoine","Sophie","Manon","Amélie","David"], r: 2, p: 1,
           e: "Julien veut faire nettoyer sa voiture le samedi matin : l'équipe de nettoyage « travaille le samedi matin »." },
-        { doc: "d6", s: "a", q: "L'annonce 6 correspond à…", choix: ["Antoine","Manon","David","Clara","Julien","Sophie","Romain","Amélie"], r: 5, p: 0.5,
+        { doc: "d6", s: "a", q: "L'annonce 6 correspond à…", choix: ["Clara","Romain","Julien","Antoine","Sophie","Manon","Amélie","David"], r: 4, p: 0.5,
           e: "Sophie veut apprendre la guitare le mardi soir : le cours pour débutants a lieu « le mardi soir »." }
       ]
     },

@@ -2,6 +2,7 @@
 // Textes originaux (proposés avec l'aide de ChatGPT, corrigés et validés par Rémi).
 // Corrections de Rémi : exercice 1, personne H remplacée par Caroline (annonce 2) ;
 // exercice 3, document 1 : « inscrivez-vous à l'accueil au plus tard jeudi ».
+// Exercice 1 : ordre des personnes mélangé (les réponses ne suivent pas l'ordre des annonces).
 // Ne jamais copier les vrais sujets.
 //
 // Même rangement que ecrits_01.js :
@@ -21,14 +22,14 @@ window.SUJET = {
       consigne: "Vous lisez ces annonces dans le journal de votre quartier. Ces personnes cherchent une activité, un service ou un travail. Pour chaque annonce, choisissez la personne qui correspond. Attention : deux personnes ne correspondent à aucune annonce.",
       intro: `<h3>Les personnes</h3>
 <ul class="personnes">
-<li><b>A. Léa</b> a 22 ans. Elle veut apprendre à coudre. Elle est disponible le samedi après-midi et peut payer jusqu'à 30 euros.</li>
+<li><b>A. Paul</b> veut donner ses vieux livres. Il cherche une association qui accepte les livres le samedi après-midi.</li>
 <li><b>B. Hugo</b> a 17 ans. Il cherche un petit travail pendant le mois de juillet. Il aimerait travailler avec des enfants.</li>
-<li><b>C. Nadia</b> veut faire réparer ses chaussures. Elle cherche un cordonnier ouvert le samedi matin.</li>
-<li><b>D. Thomas</b> veut apprendre à préparer des plats italiens. Il est disponible le dimanche matin et cherche un cours à moins de 35 euros.</li>
-<li><b>E. Mei</b> cherche un cours de photographie pour débutants. Elle est libre le mercredi soir.</li>
-<li><b>F. Paul</b> veut donner ses vieux livres. Il cherche une association qui accepte les livres le samedi après-midi.</li>
-<li><b>G. Sarah</b> cherche un cours de danse pour sa fille de 12 ans. Elle est disponible le mercredi après-midi.</li>
-<li><b>H. Caroline</b> a 19 ans. En juillet, elle cherche un emploi du lundi au vendredi. Elle aime s'occuper d'enfants.</li>
+<li><b>C. Mei</b> cherche un cours de photographie pour débutants. Elle est libre le mercredi soir.</li>
+<li><b>D. Caroline</b> a 19 ans. En juillet, elle cherche un emploi du lundi au vendredi. Elle aime s'occuper d'enfants.</li>
+<li><b>E. Léa</b> a 22 ans. Elle veut apprendre à coudre. Elle est disponible le samedi après-midi et peut payer jusqu'à 30 euros.</li>
+<li><b>F. Sarah</b> cherche un cours de danse pour sa fille de 12 ans. Elle est disponible le mercredi après-midi.</li>
+<li><b>G. Nadia</b> veut faire réparer ses chaussures. Elle cherche un cordonnier ouvert le samedi matin.</li>
+<li><b>H. Thomas</b> veut apprendre à préparer des plats italiens. Il est disponible le dimanche matin et cherche un cours à moins de 35 euros.</li>
 </ul>`,
       choixCompacts: true,
       documents: [
@@ -46,17 +47,17 @@ window.SUJET = {
 <p><span data-s="a">Notre association récupère vos livres en bon état pour les donner à des écoles et à des centres sociaux. Dépôt possible le samedi de 14 h à 17 h.</span></p>` }
       ],
       questions: [
-        { doc: "d1", s: "a", q: "L'annonce 1 correspond à…", choix: ["Léa","Hugo","Nadia","Thomas","Mei","Paul","Sarah","Caroline"], r: 0, p: 1.5,
+        { doc: "d1", s: "a", q: "L'annonce 1 correspond à…", choix: ["Paul","Hugo","Mei","Caroline","Léa","Sarah","Nadia","Thomas"], r: 4, p: 1.5,
           e: "Léa a 22 ans, veut apprendre à coudre le samedi après-midi et peut payer 30 euros : l'atelier est pour les « au moins 16 ans », « chaque samedi de 15 h à 17 h », à « 25 euros »." },
-        { doc: "d2", s: "a", q: "L'annonce 2 correspond à…", choix: ["Léa","Hugo","Nadia","Thomas","Mei","Paul","Sarah","Caroline"], r: 7, p: 1.5,
+        { doc: "d2", s: "a", q: "L'annonce 2 correspond à…", choix: ["Paul","Hugo","Mei","Caroline","Léa","Sarah","Nadia","Thomas"], r: 3, p: 1.5,
           e: "Caroline a 19 ans et cherche un emploi avec des enfants en juillet, du lundi au vendredi : l'annonce cherche des jeunes « de 18 ans ou plus ». Attention : Hugo n'a que 17 ans, il est trop jeune." },
-        { doc: "d3", s: "a", q: "L'annonce 3 correspond à…", choix: ["Léa","Hugo","Nadia","Thomas","Mei","Paul","Sarah","Caroline"], r: 2, p: 0.5,
+        { doc: "d3", s: "a", q: "L'annonce 3 correspond à…", choix: ["Paul","Hugo","Mei","Caroline","Léa","Sarah","Nadia","Thomas"], r: 6, p: 0.5,
           e: "Nadia veut faire réparer ses chaussures le samedi matin : la cordonnerie est ouverte « le samedi de 9 h à 12 h »." },
-        { doc: "d4", s: "a", q: "L'annonce 4 correspond à…", choix: ["Léa","Hugo","Nadia","Thomas","Mei","Paul","Sarah","Caroline"], r: 3, p: 1,
+        { doc: "d4", s: "a", q: "L'annonce 4 correspond à…", choix: ["Paul","Hugo","Mei","Caroline","Léa","Sarah","Nadia","Thomas"], r: 7, p: 1,
           e: "Thomas veut cuisiner italien le dimanche matin pour moins de 35 euros : le cours a lieu « chaque dimanche de 10 h à 12 h », pour « 30 euros »." },
-        { doc: "d5", s: "a", q: "L'annonce 5 correspond à…", choix: ["Léa","Hugo","Nadia","Thomas","Mei","Paul","Sarah","Caroline"], r: 4, p: 1,
+        { doc: "d5", s: "a", q: "L'annonce 5 correspond à…", choix: ["Paul","Hugo","Mei","Caroline","Léa","Sarah","Nadia","Thomas"], r: 2, p: 1,
           e: "Mei cherche un cours de photo pour débutants le mercredi soir : le cours a lieu « tous les mercredis de 19 h à 21 h »." },
-        { doc: "d6", s: "a", q: "L'annonce 6 correspond à…", choix: ["Léa","Hugo","Nadia","Thomas","Mei","Paul","Sarah","Caroline"], r: 5, p: 0.5,
+        { doc: "d6", s: "a", q: "L'annonce 6 correspond à…", choix: ["Paul","Hugo","Mei","Caroline","Léa","Sarah","Nadia","Thomas"], r: 0, p: 0.5,
           e: "Paul veut donner ses livres le samedi après-midi : l'association « récupère vos livres », avec un « dépôt possible le samedi de 14 h à 17 h »." }
       ]
     },
