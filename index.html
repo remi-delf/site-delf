@@ -5,6 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Entraînement au DELF / DALF</title>
 <link rel="stylesheet" href="css/style.css">
+<style>
+  /* Propre à l'accueil (style.css n'est pas modifié) */
+  .rubrique { cursor: pointer; }
+  .rubrique[aria-current="true"] { background: var(--blue-soft); outline: 2px solid var(--blue); }
+  .rubrique .traduction { display: block; margin-top: 2px; font-size: 14px; }
+  .changer { margin-top: 18px; }
+  .changer button { background: transparent; color: var(--blue); border: 1px solid var(--line); }
+</style>
 </head>
 <body>
 <main>
@@ -15,18 +23,34 @@
   <div class="bienvenue" id="bienvenue"></div>
   <div class="encadre avertissement-accueil" id="avertissement-accueil"></div>
 
-  <h2>1. Choisissez votre niveau</h2>
-  <div class="niveaux">
-    <button class="niveau" disabled>A1<small>bientôt</small></button>
-    <button class="niveau" data-niveau="a2" aria-pressed="false">A2<small>disponible</small></button>
-    <button class="niveau" disabled>B1<small>bientôt</small></button>
-    <button class="niveau" disabled>B2<small>bientôt</small></button>
-    <button class="niveau" disabled>C1<small>bientôt</small></button>
-    <button class="niveau" disabled>C2<small>bientôt</small></button>
+  <h2 id="titre-rubrique">1. Choisissez une rubrique</h2>
+  <div class="epreuves">
+    <a class="epreuve rubrique" id="rubrique-apprendre" href="entrainement/index.html">
+      <strong>Apprendre et s'entraîner</strong>
+      <span>Des exercices courts pour progresser, à votre rythme.</span>
+      <span class="traduction" data-texte="apprendre"></span>
+    </a>
+    <a class="epreuve rubrique" id="rubrique-preparer" href="#preparer">
+      <strong>Préparer le DELF</strong>
+      <span>Des examens blancs complets, au format officiel.</span>
+      <span class="traduction" data-texte="preparer"></span>
+    </a>
   </div>
 
+  <section id="choix-niveau" hidden>
+    <h2>2. Choisissez votre niveau</h2>
+    <div class="niveaux">
+      <button class="niveau" disabled>A1<small>bientôt</small></button>
+      <button class="niveau" data-niveau="a2" aria-pressed="false">A2<small>disponible</small></button>
+      <button class="niveau" disabled>B1<small>bientôt</small></button>
+      <button class="niveau" disabled>B2<small>bientôt</small></button>
+      <button class="niveau" disabled>C1<small>bientôt</small></button>
+      <button class="niveau" disabled>C2<small>bientôt</small></button>
+    </div>
+  </section>
+
   <section id="choix-epreuve" hidden>
-    <h2>2. Choisissez l'épreuve</h2>
+    <h2>3. Choisissez l'épreuve</h2>
     <!-- Les épreuves sont dans l'ordre du jour de l'examen. -->
     <div class="epreuves">
       <a class="epreuve" href="a2/comprehension-oral.html">
@@ -47,32 +71,78 @@
       </a>
     </div>
     <p class="note">Pour réussir le DELF ou le DALF, il faut 50 points sur 100, et au moins 5 sur 25 dans chaque épreuve (au DALF C2 : au moins 10 sur 50 dans chacune des deux épreuves).</p>
+    <p class="changer"><button id="changer">↺ Changer de langue ou de niveau</button></p>
   </section>
 </main>
 
 <script>
-// Choix du niveau. Le niveau choisi est mis dans l'adresse (#a2),
-// pour que le bouton « Retour » du navigateur revienne au bon endroit.
+// Accueil en 4 choix : langue (en haut, gérée par js/langues.js),
+// puis rubrique, puis niveau, puis épreuve.
+// Les choix sont mis dans l'adresse, sans rien enregistrer dans le navigateur :
+//   (rien)     → choix de la rubrique
+//   #preparer  → « Préparer le DELF » : choix du niveau
+//   #a2        → « Préparer le DELF », niveau A2 : les 4 épreuves
+//               (adresse déjà utilisée par les liens « ← Accueil » des pages A2)
 (function () {
-  var boutons = document.querySelectorAll('.niveau[data-niveau]');
-  var section = document.getElementById('choix-epreuve');
+  // Traduction des deux rubriques dans la langue d'aide (à faire relire).
+  var TRAD = {
+    en: { apprendre: "Learn and practise: short exercises to improve at your own pace.",
+          preparer: "Prepare for the DELF: complete mock exams in the official format." },
+    zh: { apprendre: "学习和练习：短小的练习，按照自己的节奏进步。",
+          preparer: "准备 DELF 考试：完整的模拟考试，采用官方格式。" },
+    vi: { apprendre: "Học và luyện tập: các bài tập ngắn để tiến bộ theo nhịp độ của bạn.",
+          preparer: "Chuẩn bị thi DELF: các bài thi thử đầy đủ, theo định dạng chính thức." }
+  };
+  var LANG = { en: "en", zh: "zh-Hans", vi: "vi" };
 
-  function afficher(niveau) {
-    for (var i = 0; i < boutons.length; i++) {
-      boutons[i].setAttribute('aria-pressed', boutons[i].dataset.niveau === niveau ? 'true' : 'false');
+  function traduire() {
+    var l = window.Langues ? Langues.lire() : "fr";
+    var zones = document.querySelectorAll(".rubrique .traduction");
+    for (var i = 0; i < zones.length; i++) {
+      var t = TRAD[l] && TRAD[l][zones[i].dataset.texte];
+      zones[i].textContent = t || "";
+      zones[i].hidden = !t;
+      if (t) zones[i].setAttribute("lang", LANG[l]);
     }
-    section.hidden = niveau !== 'a2';
+  }
+
+  var preparer = document.getElementById("rubrique-preparer");
+  var sectionNiveau = document.getElementById("choix-niveau");
+  var sectionEpreuve = document.getElementById("choix-epreuve");
+  var boutons = document.querySelectorAll(".niveau[data-niveau]");
+
+  function afficher(defiler) {
+    var h = location.hash.slice(1);
+    var rubrique = (h === "preparer" || h === "a2") ? "preparer" : "";
+    var niveau = h === "a2" ? "a2" : "";
+    preparer.setAttribute("aria-current", rubrique === "preparer" ? "true" : "false");
+    sectionNiveau.hidden = rubrique !== "preparer";
+    for (var i = 0; i < boutons.length; i++) {
+      boutons[i].setAttribute("aria-pressed", boutons[i].dataset.niveau === niveau ? "true" : "false");
+    }
+    sectionEpreuve.hidden = niveau !== "a2";
+    if (defiler) {
+      var cible = niveau ? sectionEpreuve : rubrique ? sectionNiveau : null;
+      if (cible) cible.scrollIntoView({ behavior: "smooth", block: "start" });
+      else scrollTo({ top: 0, behavior: "smooth" });
+    }
   }
 
   for (var i = 0; i < boutons.length; i++) {
-    boutons[i].addEventListener('click', function () {
-      location.hash = this.dataset.niveau;
-      afficher(this.dataset.niveau);
-      section.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    });
+    boutons[i].addEventListener("click", function () { location.hash = this.dataset.niveau; });
   }
+  document.getElementById("changer").addEventListener("click", function () {
+    location.hash = "";
+  });
+  window.addEventListener("hashchange", function () { afficher(true); });
 
-  afficher(location.hash.slice(1));
+  // Quand l'élève change de langue (boutons gérés par js/langues.js),
+  // on met à jour la traduction des rubriques juste après.
+  document.getElementById("langues").addEventListener("click", function () { setTimeout(traduire, 0); });
+
+  afficher(false);
+  document.addEventListener("DOMContentLoaded", traduire);
+  window.addEventListener("load", traduire);
 })();
 </script>
 <script src="js/langues.js"></script>
