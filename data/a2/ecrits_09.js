@@ -1,5 +1,6 @@
 // DELF A2 – Compréhension des écrits – Sujet 9
 // Textes originaux (proposés avec l'aide de l'IA, validés par Rémi).
+// Exercice 1 remplacé par Rémi (fête des voisins, surf, patinoire, baby-sitting, natation, kermesse).
 // Présentation du site : annonces numérotées 1 à 6 (A à F dans le document),
 // personnes A à H dans le même ordre. Points de l'exercice 1 par annonce.
 // Ne jamais copier les vrais sujets.
@@ -21,45 +22,46 @@ window.SUJET = {
       consigne: "Vous lisez ces annonces dans le journal de votre quartier. Ces personnes cherchent une activité, un service ou un travail. Pour chaque annonce, choisissez la personne qui correspond. Attention : deux personnes ne correspondent à aucune annonce.",
       intro: `<h3>Les personnes</h3>
 <ul class="personnes">
-<li><b>A. Amine</b>, 17 ans, cherche une activité pour débutants le samedi 14 décembre, de 10 h à 12 h. Il veut participer à une activité à 8 euros avec le matériel fourni.</li>
-<li><b>B. Lina</b>, 15 ans, est disponible mercredi 18 décembre de 14 h à 16 h. Elle souhaite préparer deux savons parfumés, mais elle peut seulement payer 7 euros.</li>
-<li><b>C. Rayan</b>, 38 ans, commence une activité manuelle. Il est disponible jeudi 19 décembre de 18 h à 20 h 30 et accepte de payer 12 euros.</li>
-<li><b>D. Nora</b>, 21 ans, n'a jamais pratiqué cette activité. Elle est libre mardi 17 décembre de 17 h 30 à 19 h 30 et peut payer 10 euros.</li>
-<li><b>E. Adam</b>, 14 ans, cherche une activité pour débutants vendredi 20 décembre de 16 h à 18 h. Il peut payer 7 euros et aimerait repartir avec une petite estampe.</li>
-<li><b>F. Yasmine</b>, 15 ans, aimerait participer à une activité le mercredi 18 décembre, de 14 h à 16 h. Elle cherche une activité où elle peut préparer deux objets et payer 9 euros.</li>
-<li><b>G. Maël</b>, 17 ans, est débutant et cherche une activité vendredi 20 décembre, de 16 h à 18 h. Il souhaite repartir avec une petite réalisation et payer 7 euros.</li>
-<li><b>H. Inès</b>, 10 ans, cherche une activité le samedi 21 décembre de 15 h à 17 h. Elle souhaite utiliser du papier fourni sur place et payer 5 euros.</li>
+<li><b>A. Dylan</b> travaille le soir du mardi au jeudi. Il cherche quelqu'un pour garder sa fille de quatre ans. Il peut payer huit euros de l'heure.</li>
+<li><b>B. Gabriel</b> aimerait apprendre à danser le jeudi soir. Il peut payer vingt euros par mois.</li>
+<li><b>C. Aurélie</b> habite rue des Roses. Elle voudrait rencontrer ses voisins vendredi soir et peut apporter un gâteau.</li>
+<li><b>D. Bilal</b> a quinze ans. Il voudrait faire du surf samedi matin et peut payer trente euros.</li>
+<li><b>E. Hélène</b> cherche une personne pour promener son chien le soir. Elle peut payer cinq euros par promenade.</li>
+<li><b>F. Emma</b> est adulte et ne sait pas nager. Elle cherche un cours le lundi soir et peut payer vingt euros par mois.</li>
+<li><b>G. Farid</b> cherche une sortie gratuite pour sa famille samedi après-midi. Ses enfants aiment les jeux.</li>
+<li><b>H. Cécile</b> veut emmener son fils de neuf ans à la patinoire mercredi. Elle cherche un prix réduit.</li>
 </ul>`,
       choixCompacts: true,
       documents: [
-        { id: "d1", html: `<h3>Annonce 1 – Atelier de calligraphie</h3>
-<p><span data-s="a">Samedi 14 décembre, de 10 h à 12 h. Pour les débutants à partir de 16 ans. Le matériel est fourni. Participation : 8 euros.</span> Inscription avant mercredi.</p>` },
-        { id: "d2", html: `<h3>Annonce 2 – Fabrication de savon</h3>
-<p><span data-s="a">Mercredi 18 décembre, de 14 h à 16 h. Activité pour adultes et jeunes dès 15 ans. Vous préparez deux savons parfumés. Prix : 9 euros.</span> Places limitées.</p>` },
-        { id: "d3", html: `<h3>Annonce 3 – Sculpture sur bois</h3>
-<p><span data-s="a">Jeudi 19 décembre, de 18 h à 20 h 30. Cet atelier accueille les adultes qui commencent.</span> Les outils sont prêtés. <span data-s="b">Tarif : 12 euros.</span> Réservation obligatoire.</p>` },
-        { id: "d4", html: `<h3>Annonce 4 – Origami</h3>
-<p><span data-s="a">Samedi 21 décembre, de 15 h à 17 h. Les enfants de 8 à 12 ans peuvent participer. Les feuilles sont offertes. Prix : 5 euros.</span> Une inscription est nécessaire.</p>` },
-        { id: "d5", html: `<h3>Annonce 5 – Mosaïque</h3>
-<p><span data-s="a">Mardi 17 décembre, de 17 h 30 à 19 h 30. Atelier ouvert aux personnes de 18 ans et plus, même sans expérience. Le matériel coûte 10 euros.</span> Inscription sur place.</p>` },
-        { id: "d6", html: `<h3>Annonce 6 – Gravure sur linoléum</h3>
-<p><span data-s="a">Vendredi 20 décembre, de 16 h à 18 h. Pour les débutants de 16 ans et plus. Vous repartez avec une petite estampe. Tarif : 7 euros.</span> Matériel inclus.</p>` }
+        { id: "d1", html: `<h3>Annonce 1 – Fête des voisins</h3>
+<p><span data-s="a">Les habitants de la rue des Roses organisent une fête des voisins. Rendez-vous vendredi soir dans la salle des fêtes. Chaque famille apporte un plat ou un gâteau à partager.</span> L'entrée est gratuite.</p>` },
+        { id: "d2", html: `<h3>Annonce 2 – École de surf</h3>
+<p><span data-s="a">L'école de surf de la plage propose une première leçon samedi matin pour les jeunes de quatorze ans et plus. Le prix est de trente euros.</span> Les cours ont lieu au bord de la mer, avec un moniteur.</p>` },
+        { id: "d3", html: `<h3>Annonce 3 – Patinoire</h3>
+<p><span data-s="a">La patinoire de la ville propose un tarif réduit tous les mercredis aux enfants de moins de douze ans : six euros au lieu de dix euros.</span> Elle est ouverte toute la journée.</p>` },
+        { id: "d4", html: `<h3>Annonce 4 – Baby-sitting</h3>
+<p><span data-s="a">Étudiante sérieuse, je garde vos enfants le soir, du lundi au jeudi. Je prends huit euros de l'heure. J'accepte les enfants de trois à dix ans.</span> Contactez-moi par message.</p>` },
+        { id: "d5", html: `<h3>Annonce 5 – Cours de natation</h3>
+<p><span data-s="a">La piscine du centre-ville ouvre un cours de natation pour adultes débutants, tous les lundis soir. Le prix est de vingt euros par mois.</span> L'inscription se fait à l'accueil de la piscine.</p>` },
+        { id: "d6", html: `<h3>Annonce 6 – Kermesse</h3>
+<p><span data-s="a">La kermesse de l'école aura lieu samedi après-midi dans la cour. Il y aura des jeux, des boissons et de la musique pour toute la famille. L'entrée est gratuite.</span></p>` }
       ],
       questions: [
-        { doc: "d1", s: "a", q: "L'annonce 1 correspond à…", choix: ["Amine","Lina","Rayan","Nora","Adam","Yasmine","Maël","Inès"], r: 0, p: 1.5,
-          e: "Amine, 17 ans, débutant, est libre le samedi 14 décembre de 10 h à 12 h et peut payer 8 euros : l'atelier est « pour les débutants à partir de 16 ans », « participation : 8 euros », matériel fourni." },
-        { doc: "d2", s: "a", q: "L'annonce 2 correspond à…", choix: ["Amine","Lina","Rayan","Nora","Adam","Yasmine","Maël","Inès"], r: 5, p: 1.5,
-          e: "Yasmine, 15 ans, veut préparer deux objets le mercredi 18 décembre et peut payer 9 euros : l'atelier est ouvert aux jeunes « dès 15 ans » et coûte « 9 euros ». Attention : Lina veut la même activité, mais elle peut seulement payer 7 euros." },
-        { doc: "d3", s: "a", q: "L'annonce 3 correspond à…", choix: ["Amine","Lina","Rayan","Nora","Adam","Yasmine","Maël","Inès"], r: 2, p: 0.5,
-          e: "Rayan, 38 ans, commence une activité manuelle et est libre jeudi de 18 h à 20 h 30 : l'atelier « accueille les adultes qui commencent », pour « 12 euros »." },
-        { doc: "d4", s: "a", q: "L'annonce 4 correspond à…", choix: ["Amine","Lina","Rayan","Nora","Adam","Yasmine","Maël","Inès"], r: 7, p: 1,
-          e: "Inès, 10 ans, est libre le samedi 21 décembre de 15 h à 17 h et peut payer 5 euros : l'atelier est pour « les enfants de 8 à 12 ans », « les feuilles sont offertes », « prix : 5 euros »." },
-        { doc: "d5", s: "a", q: "L'annonce 5 correspond à…", choix: ["Amine","Lina","Rayan","Nora","Adam","Yasmine","Maël","Inès"], r: 3, p: 1,
-          e: "Nora, 21 ans, n'a jamais pratiqué et est libre le mardi 17 décembre de 17 h 30 à 19 h 30 : l'atelier est ouvert « aux personnes de 18 ans et plus, même sans expérience », pour « 10 euros »." },
-        { doc: "d6", s: "a", q: "L'annonce 6 correspond à…", choix: ["Amine","Lina","Rayan","Nora","Adam","Yasmine","Maël","Inès"], r: 6, p: 0.5,
-          e: "Maël, 17 ans, débutant, est libre le vendredi 20 décembre de 16 h à 18 h et peut payer 7 euros : l'atelier est « pour les débutants de 16 ans et plus », « tarif : 7 euros ». Attention : Adam a les mêmes horaires, mais il n'a que 14 ans." }
+        { doc: "d1", s: "a", q: "L'annonce 1 correspond à…", choix: ["Dylan","Gabriel","Aurélie","Bilal","Hélène","Emma","Farid","Cécile"], r: 2, p: 1.5,
+          e: "Aurélie habite rue des Roses et veut rencontrer ses voisins vendredi soir avec un gâteau : c'est la fête des voisins de « la rue des Roses », « vendredi soir », où chacun apporte « un plat ou un gâteau »." },
+        { doc: "d2", s: "a", q: "L'annonce 2 correspond à…", choix: ["Dylan","Gabriel","Aurélie","Bilal","Hélène","Emma","Farid","Cécile"], r: 3, p: 1.5,
+          e: "Bilal, 15 ans, veut faire du surf samedi matin pour trente euros : la leçon a lieu « samedi matin », pour les jeunes « de quatorze ans et plus », à « trente euros »." },
+        { doc: "d3", s: "a", q: "L'annonce 3 correspond à…", choix: ["Dylan","Gabriel","Aurélie","Bilal","Hélène","Emma","Farid","Cécile"], r: 7, p: 0.5,
+          e: "Cécile veut emmener son fils de neuf ans à la patinoire mercredi, à prix réduit : le tarif réduit est « tous les mercredis », pour les enfants « de moins de douze ans »." },
+        { doc: "d4", s: "a", q: "L'annonce 4 correspond à…", choix: ["Dylan","Gabriel","Aurélie","Bilal","Hélène","Emma","Farid","Cécile"], r: 0, p: 1,
+          e: "Dylan travaille le soir du mardi au jeudi et cherche quelqu'un pour sa fille de quatre ans, à huit euros de l'heure : l'étudiante garde les enfants « le soir, du lundi au jeudi », « de trois à dix ans », pour « huit euros de l'heure »." },
+        { doc: "d5", s: "a", q: "L'annonce 5 correspond à…", choix: ["Dylan","Gabriel","Aurélie","Bilal","Hélène","Emma","Farid","Cécile"], r: 5, p: 1,
+          e: "Emma est adulte, ne sait pas nager et cherche un cours le lundi soir pour vingt euros par mois : le cours est « pour adultes débutants », « tous les lundis soir », à « vingt euros par mois ». Attention : Gabriel peut aussi payer vingt euros par mois, mais il veut danser le jeudi." },
+        { doc: "d6", s: "a", q: "L'annonce 6 correspond à…", choix: ["Dylan","Gabriel","Aurélie","Bilal","Hélène","Emma","Farid","Cécile"], r: 6, p: 0.5,
+          e: "Farid cherche une sortie gratuite en famille samedi après-midi, avec des jeux : la kermesse a lieu « samedi après-midi », avec « des jeux », et « l'entrée est gratuite »." }
       ]
     },
+
 
     // ---------------------------------------------------------------
     {
