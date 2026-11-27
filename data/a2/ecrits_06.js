@@ -1,7 +1,8 @@
 // DELF A2 – Compréhension des écrits – Sujet 6
 // Textes originaux (proposés avec l'aide de ChatGPT, corrigés et validés par Rémi).
 // Corrections de Rémi : exercice 2, l'auteur du courriel s'appelle Nicolas ;
-// exercice 3, question 4 : « De quelle heure à quelle heure… ».
+// exercice 3, question 4 : « De quelle heure à quelle heure… » ;
+// une phrase ajoutée dans l'exercice 2 et dans l'exercice 4 pour respecter les longueurs officielles.
 // Ne jamais copier les vrais sujets.
 //
 // Même rangement que ecrits_01.js :
@@ -68,7 +69,7 @@ window.SUJET = {
       consigne: "Vous recevez ce message d'un ami. Lisez-le et répondez aux questions.",
       documents: [
         { id: "d1", html: `<p>Bonjour Marc,</p>
-<p>Je voulais te raconter ma journée de samedi. <span data-s="a">Le matin, j'ai participé à un atelier dans une association près de chez moi.</span> Nous avons appris à réparer de petits objets de la maison. <span data-s="b">J'ai surtout travaillé sur une lampe qui ne fonctionnait plus.</span> L'animateur nous a expliqué comment chercher le problème et utiliser les bons outils. Après l'atelier, je suis allé chez ma sœur. <span data-s="c">Elle avait besoin d'aide pour installer une étagère dans son bureau.</span> <span data-s="d">Nous avons travaillé pendant deux heures, puis nous avons préparé le déjeuner ensemble.</span> <span data-s="e">Je suis rentré chez moi vers dix-sept heures.</span> J'étais fatigué, mais content d'avoir passé une journée utile. <span data-s="f">Dimanche, je vais rester tranquillement à la maison.</span> Et toi, qu'est-ce que tu as prévu pour ce week-end ?</p>
+<p>Je voulais te raconter ma journée de samedi. <span data-s="a">Le matin, j'ai participé à un atelier dans une association près de chez moi.</span> Nous avons appris à réparer de petits objets de la maison. <span data-s="b">J'ai surtout travaillé sur une lampe qui ne fonctionnait plus.</span> Maintenant, elle fonctionne très bien et je l'ai mise dans ma chambre. L'animateur nous a expliqué comment chercher le problème et utiliser les bons outils. Après l'atelier, je suis allé chez ma sœur. <span data-s="c">Elle avait besoin d'aide pour installer une étagère dans son bureau.</span> <span data-s="d">Nous avons travaillé pendant deux heures, puis nous avons préparé le déjeuner ensemble.</span> <span data-s="e">Je suis rentré chez moi vers dix-sept heures.</span> J'étais fatigué, mais content d'avoir passé une journée utile. <span data-s="f">Dimanche, je vais rester tranquillement à la maison.</span> Et toi, qu'est-ce que tu as prévu pour ce week-end ?</p>
 <p>À bientôt,<br>Nicolas</p>` }
       ],
       questions: [
@@ -121,7 +122,7 @@ window.SUJET = {
       consigne: "Vous lisez cet article dans un journal. Répondez aux questions.",
       documents: [
         { id: "d1", html: `<h3>Une nouvelle activité pour les jeunes</h3>
-<p>Depuis septembre, une maison de jeunes propose un atelier de cuisine sans cuisson pour les adolescents. <span data-s="a">Chaque mardi, les participants se retrouvent après les cours pour préparer des recettes simples avec des fruits, des légumes et différents produits frais.</span> <span data-s="b">Ils apprennent aussi à présenter joliment les plats.</span> <span data-s="c">Au début, certains jeunes ne connaissaient presque rien à la préparation des repas.</span> Maintenant, ils sont plus autonomes et proposent eux-mêmes des idées de recettes. Le groupe prépare actuellement une petite présentation pour les parents. <span data-s="d">Elle aura lieu le vendredi vingt-huit juin à dix-neuf heures.</span> Les familles pourront goûter gratuitement les préparations. <span data-s="e">L'activité reprendra en septembre prochain avec un nouveau programme et quelques recettes différentes.</span></p>` }
+<p>Depuis septembre, une maison de jeunes propose un atelier de cuisine sans cuisson pour les adolescents. <span data-s="a">Chaque mardi, les participants se retrouvent après les cours pour préparer des recettes simples avec des fruits, des légumes et différents produits frais.</span> <span data-s="b">Ils apprennent aussi à présenter joliment les plats.</span> <span data-s="c">Au début, certains jeunes ne connaissaient presque rien à la préparation des repas.</span> Maintenant, ils sont plus autonomes et proposent eux-mêmes des idées de recettes. Les jeunes apprécient beaucoup ce moment de partage après une longue journée. Le groupe prépare actuellement une petite présentation pour les parents. <span data-s="d">Elle aura lieu le vendredi vingt-huit juin à dix-neuf heures.</span> Les familles pourront goûter gratuitement les préparations. <span data-s="e">L'activité reprendra en septembre prochain avec un nouveau programme et quelques recettes différentes.</span></p>` }
       ],
       questions: [
         { doc: "d1", s: "a", q: "Quand a lieu l'atelier ?", choix: ["Le mardi après les cours.","Le vendredi matin.","Le mercredi soir."], r: 0, p: 1,
