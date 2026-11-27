@@ -23,10 +23,10 @@ window.SUJET = {
       intro: `<h3>Les personnes</h3>
 <ul class="personnes">
 <li><b>A. Sami</b>, 44 ans, a de petits objets en métal à donner pour le recyclage. Il est disponible vendredi de dix-sept heures à dix-neuf heures.</li>
-<li><b>B. Inès</b>, 30 ans, aimerait apprendre à fabriquer des bougies mercredi après-midi. Elle peut payer cinq euros.</li>
+<li><b>B. Inès</b>, 30 ans, aimerait faire du yoga mercredi après-midi. Elle peut payer cinq euros.</li>
 <li><b>C. Léa</b>, 27 ans, cherche une coupe de cheveux pour samedi matin. Elle peut payer vingt-huit euros.</li>
 <li><b>D. Chloé</b>, 16 ans, cherche une activité de dessin pour débutants mercredi après-midi. Elle peut payer cinq euros.</li>
-<li><b>E. Marc</b>, 15 ans, aimerait participer à une activité d'astronomie jeudi soir. Il est disponible de dix-huit heures trente à vingt heures.</li>
+<li><b>E. Marc</b>, 15 ans, aimerait participer à un atelier de théâtre jeudi soir. Il est disponible de dix-huit heures trente à vingt heures.</li>
 <li><b>F. Hugo</b>, 20 ans, aimerait apprendre à fabriquer des bougies. Il est disponible mercredi après-midi et peut payer six euros.</li>
 <li><b>G. Paul</b>, 52 ans, doit faire une copie d'une clé samedi matin. Il peut payer sept euros.</li>
 <li><b>H. Nadia</b>, 34 ans, aimerait découvrir l'astronomie jeudi soir. Elle est disponible de dix-huit heures trente à vingt heures.</li>
@@ -50,9 +50,9 @@ window.SUJET = {
         { doc: "d1", s: "a", q: "L'annonce 1 correspond à…", choix: ["Sami","Inès","Léa","Chloé","Marc","Hugo","Paul","Nadia"], r: 2, p: 1.5,
           e: "Léa cherche une coupe samedi matin pour vingt-huit euros : le salon propose une coupe « samedi, de neuf heures à midi », « à vingt-huit euros »." },
         { doc: "d2", s: "a", q: "L'annonce 2 correspond à…", choix: ["Sami","Inès","Léa","Chloé","Marc","Hugo","Paul","Nadia"], r: 5, p: 1.5,
-          e: "Hugo veut fabriquer des bougies mercredi après-midi et peut payer six euros : la séance coûte « six euros ». Attention : Inès veut la même activité, mais elle ne peut payer que cinq euros." },
+          e: "Hugo veut fabriquer des bougies mercredi après-midi et peut payer six euros : la séance coûte « six euros ». Inès, elle, veut faire du yoga : aucune annonce ne propose cette activité." },
         { doc: "d3", s: "a", q: "L'annonce 3 correspond à…", choix: ["Sami","Inès","Léa","Chloé","Marc","Hugo","Paul","Nadia"], r: 7, p: 0.5,
-          e: "Nadia, 34 ans, veut découvrir l'astronomie jeudi de 18 h 30 à 20 h : ce sont les horaires de la soirée. Attention : Marc a les mêmes horaires, mais il a 15 ans, et la soirée est « réservée aux adultes »." },
+          e: "Nadia, 34 ans, veut découvrir l'astronomie jeudi de 18 h 30 à 20 h : ce sont les horaires de la soirée. Marc, lui, veut faire du théâtre : aucune annonce ne propose cette activité." },
         { doc: "d4", s: "a", q: "L'annonce 4 correspond à…", choix: ["Sami","Inès","Léa","Chloé","Marc","Hugo","Paul","Nadia"], r: 0, p: 1,
           e: "Sami veut donner de petits objets en métal vendredi de 17 h à 19 h : l'association « récupère les petits objets en métal » à ces horaires." },
         { doc: "d5", s: "a", q: "L'annonce 5 correspond à…", choix: ["Sami","Inès","Léa","Chloé","Marc","Hugo","Paul","Nadia"], r: 3, p: 1,
