@@ -13,8 +13,7 @@
 //   apres   = après la 2e écoute, pour compléter les réponses.
 //   Exercices 1 et 2 : 15 / 10 / 10. Exercices 3 et 4 : 30 / 30 / 30.
 //
-// Sujet en cours de construction : exercices 1 et 2 pour l'instant.
-// Le sujet complet aura 4 exercices et 25 points.
+// Sujet complet : 4 exercices, 25 points.
 
 window.SUJET = {
   numero: 1,
@@ -131,6 +130,86 @@ window.SUJET = {
         { doc: "d3", s: "b", q: "Qu'est-ce qu'on apprend le samedi ?",
           choix: ["À cuisiner.", "À réparer un vélo.", "À dessiner."], r: 1, p: 0.5,
           e: "« Le samedi après-midi, on vous apprend aussi à réparer votre vélo. »" }
+      ]
+    },
+
+    // ---------------------------------------------------------------
+    {
+      titre: "Exercice 3 – Message sur un répondeur",
+      points: 6,
+      lecture: 30, pause: 30, apres: 30,
+      consigne: "Vous travaillez dans un restaurant. Vous écoutez ce message sur le répondeur. Lisez les questions, écoutez, puis répondez.",
+      documents: [
+        {
+          id: "d1",
+          titre: "Message de M. Garnier",
+          audio: "oral01_ex3_doc1.mp3",
+          transcription: `<p>Bonjour, ici Monsieur Garnier. <span data-s="a">Je voudrais réserver une table pour vendredi soir, pour fêter la retraite de mon collègue.</span> <span data-s="b">Nous serons douze personnes.</span> <span data-s="c">Nous aimerions une table dans le jardin, s'il fait beau.</span> <span data-s="e">Deux personnes sont végétariennes : est-ce que vous avez des plats sans viande ?</span> <span data-s="d">Rappelez-moi pour me dire si c'est possible.</span> Mon numéro est le 06 24 58 71 30. <span data-s="f">Ma femme passera mercredi pour payer l'acompte.</span> Merci beaucoup !</p>`
+        }
+      ],
+      questions: [
+        { doc: "d1", s: "a", q: "Qu'est-ce que Monsieur Garnier veut fêter ?",
+          choix: ["Son anniversaire.", "La retraite d'un collègue.", "Un mariage."], r: 1, p: 0.5,
+          e: "Il réserve une table « pour fêter la retraite de [son] collègue »." },
+        { doc: "d1", s: "b", q: "Combien de personnes vont venir ?",
+          choix: ["10.", "12.", "20."], r: 1, p: 2,
+          e: "« Nous serons douze personnes. »" },
+        { doc: "d1", s: "c", q: "Où Monsieur Garnier aimerait-il manger ?",
+          choix: ["Dans le jardin.", "Près de la fenêtre.", "Dans une salle privée."], r: 0, p: 0.5,
+          e: "« Nous aimerions une table dans le jardin, s'il fait beau. »" },
+        { doc: "d1", s: "e", q: "Monsieur Garnier veut savoir si le restaurant propose…",
+          choix: ["des plats sans viande.", "des desserts.", "des menus pour enfants."], r: 0, p: 0.5,
+          e: "« Deux personnes sont végétariennes : est-ce que vous avez des plats sans viande ? »" },
+        { doc: "d1", s: "d", q: "Vous devez…",
+          choix: ["rappeler Monsieur Garnier.", "envoyer un courriel à Monsieur Garnier.", "attendre un appel de Monsieur Garnier."], r: 0, p: 1.5,
+          e: "Il demande : « Rappelez-moi pour me dire si c'est possible », et il donne son numéro." },
+        { doc: "d1", s: "f", q: "Qui va passer mercredi ?",
+          choix: ["Monsieur Garnier.", "Son collègue.", "La femme de Monsieur Garnier."], r: 2, p: 1,
+          e: "« Ma femme passera mercredi pour payer l'acompte. »" }
+      ]
+    },
+
+    // ---------------------------------------------------------------
+    {
+      titre: "Exercice 4 – Quatre dialogues",
+      points: 7,
+      lecture: 30, pause: 30, apres: 30,
+      consigne: "Vous écoutez 4 dialogues. Associez chaque dialogue à une situation. Attention : il y a 6 situations mais seulement 4 dialogues.",
+      documents: [
+        {
+          id: "d1",
+          titre: "Dialogue 1",
+          audio: "oral01_ex4_doc1.mp3",
+          transcription: `<p>– Femme : <span data-s="a">Excusez-moi, monsieur, la poste, s'il vous plaît ?</span><br>– Homme : Allez tout droit, puis tournez à gauche après la boulangerie.<br>– Femme : C'est loin ?<br>– Homme : Non, cinq minutes à pied.</p>`
+        },
+        {
+          id: "d2",
+          titre: "Dialogue 2",
+          audio: "oral01_ex4_doc2.mp3",
+          transcription: `<p>– Homme : Salut Julie ! Tu es libre samedi soir ?<br>– Femme : Oui, pourquoi ?<br>– Homme : <span data-s="a">Je fais une petite fête chez moi pour mes 30 ans. Tu veux venir ?</span><br>– Femme : Avec plaisir !</p>`
+        },
+        {
+          id: "d3",
+          titre: "Dialogue 3",
+          audio: "oral01_ex4_doc3.mp3",
+          transcription: `<p>– Femme : <span data-s="a">Bonjour, un aller-retour pour Marseille, s'il vous plaît.</span><br>– Homme : Pour quel jour ?<br>– Femme : Demain matin, vers 8 heures.<br>– Homme : Ça fait 64 euros, s'il vous plaît.</p>`
+        },
+        {
+          id: "d4",
+          titre: "Dialogue 4",
+          audio: "oral01_ex4_doc4.mp3",
+          transcription: `<p>– Homme : <span data-s="a">Pardon, je suis vraiment désolé, je suis en retard.</span><br>– Femme : Ce n'est pas grave. Qu'est-ce qui s'est passé ?<br>– Homme : Mon bus n'est pas venu. Excuse-moi encore.<br>– Femme : Ne t'inquiète pas, le film n'a pas commencé.</p>`
+        }
+      ],
+      questions: [
+        { doc: "d1", s: "a", q: "Le dialogue 1 correspond à…", choix: ["Inviter quelqu'un.", "Remercier quelqu'un.", "Demander un service.", "S'excuser.", "Acheter un billet.", "Demander son chemin."], r: 5, p: 2,
+          e: "La femme cherche la poste : « la poste, s'il vous plaît ? ». Elle demande son chemin." },
+        { doc: "d2", s: "a", q: "Le dialogue 2 correspond à…", choix: ["Inviter quelqu'un.", "Remercier quelqu'un.", "Demander un service.", "S'excuser.", "Acheter un billet.", "Demander son chemin."], r: 0, p: 0.5,
+          e: "L'homme invite Julie à sa fête : « Tu veux venir ? »" },
+        { doc: "d3", s: "a", q: "Le dialogue 3 correspond à…", choix: ["Inviter quelqu'un.", "Remercier quelqu'un.", "Demander un service.", "S'excuser.", "Acheter un billet.", "Demander son chemin."], r: 4, p: 2.5,
+          e: "La femme achète « un aller-retour pour Marseille » : c'est un billet de train." },
+        { doc: "d4", s: "a", q: "Le dialogue 4 correspond à…", choix: ["Inviter quelqu'un.", "Remercier quelqu'un.", "Demander un service.", "S'excuser.", "Acheter un billet.", "Demander son chemin."], r: 3, p: 2,
+          e: "L'homme s'excuse d'être en retard : « je suis vraiment désolé », « excuse-moi encore »." }
       ]
     }
   ]
