@@ -12,6 +12,9 @@
   .rubrique .traduction { display: block; margin-top: 2px; font-size: 14px; }
   .changer { margin-top: 18px; }
   .changer button { background: transparent; color: var(--blue); border: 1px solid var(--line); }
+  .reprendre { margin: 4px 0 14px; }
+  .reprendre button { margin: 0; }
+  .reprendre .traduction { display: block; margin-top: 4px; font-size: 14px; }
 </style>
 </head>
 <body>
@@ -20,6 +23,11 @@
   <p class="sub">Des sujets originaux, au format de l'examen officiel.</p>
 
   <div class="langues" id="langues" aria-label="Langue / Language / 语言 / Ngôn ngữ"></div>
+  <div class="reprendre" id="reprendre" hidden>
+    <button id="bouton-reprendre">▶ Reprendre : <span id="reprendre-lieu"></span></button>
+    <span class="traduction" id="reprendre-traduction" hidden></span>
+  </div>
+
   <div class="bienvenue" id="bienvenue"></div>
   <div class="encadre avertissement-accueil" id="avertissement-accueil"></div>
 
@@ -78,7 +86,9 @@
 <script>
 // Accueil en 4 choix : langue (en haut, gérée par js/langues.js),
 // puis rubrique, puis niveau, puis épreuve.
-// Les choix sont mis dans l'adresse, sans rien enregistrer dans le navigateur :
+// La rubrique et le niveau sont aussi gardés dans le navigateur (clé « delf-preferences »),
+// pour proposer « Reprendre » à la visite suivante. La langue reste dans « delf-langue ».
+// Les choix sont mis dans l'adresse :
 //   (rien)     → choix de la rubrique
 //   #preparer  → « Préparer le DELF » : choix du niveau
 //   #a2        → « Préparer le DELF », niveau A2 : les 4 épreuves
@@ -106,6 +116,68 @@
     }
   }
 
+  // ----- Préférences (rubrique et niveau) -----
+  var CLE = "delf-preferences";
+  var NIVEAUX_ACTIFS = { preparer: ["a2"] };   // niveaux disponibles par rubrique
+
+  // Renvoie des préférences valides, ou null (absentes, vides ou illisibles).
+  function lirePreferences() {
+    var p;
+    try { p = JSON.parse(localStorage.getItem(CLE)); } catch (e) { return null; }
+    if (!p || typeof p !== "object" || Array.isArray(p)) return null;
+    if (p.rubrique === "apprendre") return { rubrique: "apprendre" };
+    if (p.rubrique === "preparer") {
+      return { rubrique: "preparer", niveau: NIVEAUX_ACTIFS.preparer.indexOf(p.niveau) >= 0 ? p.niveau : "" };
+    }
+    return null;
+  }
+  function garderPreferences(rubrique, niveau) {
+    var avant = lirePreferences();
+    // Si l'élève choisit seulement la rubrique, on garde le niveau déjà choisi pour cette rubrique.
+    if (!niveau && avant && avant.rubrique === rubrique) niveau = avant.niveau || "";
+    var p = { rubrique: rubrique };
+    if (niveau) p.niveau = niveau;
+    try { localStorage.setItem(CLE, JSON.stringify(p)); } catch (e) { /* stockage impossible : tant pis */ }
+  }
+
+  // Textes du bouton « Reprendre » (à faire relire pour zh et vi).
+  var REPRENDRE = {
+    en: { mot: "Resume", apprendre: "Learn and practise", preparer: "Prepare for the DELF" },
+    zh: { mot: "继续", apprendre: "学习和练习", preparer: "准备 DELF 考试" },
+    vi: { mot: "Tiếp tục", apprendre: "Học và luyện tập", preparer: "Chuẩn bị thi DELF" }
+  };
+  var NOMS = { apprendre: "Apprendre et s'entraîner", preparer: "Préparer le DELF" };
+
+  function lieu(p, noms) {
+    return noms[p.rubrique] + (p.niveau ? " · " + p.niveau.toUpperCase() : "");
+  }
+  function afficherReprendre() {
+    var zone = document.getElementById("reprendre");
+    var p = lirePreferences();
+    // Seulement à l'arrivée sur l'accueil (sans choix dans l'adresse) et si un choix est gardé.
+    if (!p || location.hash.slice(1)) { zone.hidden = true; return; }
+    document.getElementById("reprendre-lieu").textContent = lieu(p, NOMS);
+    var l = window.Langues ? Langues.lire() : "fr";
+    var trad = document.getElementById("reprendre-traduction");
+    if (REPRENDRE[l]) {
+      trad.textContent = REPRENDRE[l].mot + " : " + lieu(p, REPRENDRE[l]);
+      trad.setAttribute("lang", LANG[l]);
+      trad.hidden = false;
+    } else {
+      trad.hidden = true;
+    }
+    zone.hidden = false;
+  }
+  document.getElementById("bouton-reprendre").addEventListener("click", function () {
+    var p = lirePreferences();
+    if (!p) return;
+    if (p.rubrique === "apprendre") location.href = "entrainement/index.html";
+    else location.hash = p.niveau || "preparer";
+  });
+  document.getElementById("rubrique-apprendre").addEventListener("click", function () {
+    garderPreferences("apprendre", "");
+  });
+
   var preparer = document.getElementById("rubrique-preparer");
   var sectionNiveau = document.getElementById("choix-niveau");
   var sectionEpreuve = document.getElementById("choix-epreuve");
@@ -121,6 +193,8 @@
       boutons[i].setAttribute("aria-pressed", boutons[i].dataset.niveau === niveau ? "true" : "false");
     }
     sectionEpreuve.hidden = niveau !== "a2";
+    if (rubrique) garderPreferences(rubrique, niveau);
+    afficherReprendre();
     if (defiler) {
       var cible = niveau ? sectionEpreuve : rubrique ? sectionNiveau : null;
       if (cible) cible.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -138,11 +212,11 @@
 
   // Quand l'élève change de langue (boutons gérés par js/langues.js),
   // on met à jour la traduction des rubriques juste après.
-  document.getElementById("langues").addEventListener("click", function () { setTimeout(traduire, 0); });
+  document.getElementById("langues").addEventListener("click", function () { setTimeout(function () { traduire(); afficherReprendre(); }, 0); });
 
   afficher(false);
   document.addEventListener("DOMContentLoaded", traduire);
-  window.addEventListener("load", traduire);
+  window.addEventListener("load", function () { traduire(); afficherReprendre(); });
 })();
 </script>
 <script src="js/langues.js"></script>
