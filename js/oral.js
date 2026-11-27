@@ -74,7 +74,7 @@
         var blocs = x.documents.map(function (d) {
           var qs = "";
           x.questions.forEach(function (q, i) {
-            if (q.doc === d.id) qs += question(k, q, i, ++numQ);
+            if (q.doc === d.id) qs += question(k, q, i, ++numQ, x.choixCompacts);
           });
           var nbq = x.questions.filter(function (q) { return q.doc === d.id; }).length;
           return '<div class="ecoute" id="e' + k + "-" + d.id + '" data-k="' + k + '" data-doc="' + d.id + '">' +
@@ -99,13 +99,13 @@
       }).join("");
     }
 
-    function question(k, q, i, num) {
+    function question(k, q, i, num, compacts) {
       var choix = q.choix.map(function (c, j) {
         var lettre = q.choix.length >= 3 ? LETTRES[j] + ". " : "";
         return '<label><input type="radio" name="q' + k + "_" + i + '" value="' + j + '"> ' + lettre + c + "</label>";
       }).join("");
       return '<div class="q" data-i="' + i + '"><b>' + num + ". " + q.q + ' <span class="pts">' + fmt(q.p) + " pt</span></b>" +
-        '<div class="choix">' + choix + '</div><p class="fb"></p></div>';
+        '<div class="choix' + (compacts ? " compacts" : "") + '">' + choix + '</div><p class="fb"></p></div>';
     }
 
     function majTotal() {
