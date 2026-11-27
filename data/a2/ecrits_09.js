@@ -80,7 +80,7 @@ window.SUJET = {
           e: "« La responsable m'a d'abord demandé de parler de mon expérience. » Les horaires et les qualités, c'est ensuite." },
         { doc: "d1", s: "d", q: "Quel jour Nassim peut-il travailler ?", choix: ["Le mercredi matin.","Le samedi.","Le vendredi seulement."], r: 1, p: 1,
           e: "« Je pouvais travailler le samedi, mais pas le mercredi matin. »" },
-        { doc: "d1", s: "e", q: "Que doit faire Nassim pendant l'entretien ?", choix: ["Jouer le rôle d'un client.","Présenter le magasin.","Préparer une commande."], r: 0, p: 1,
+        { doc: "d1", s: "e", q: "Que doit faire Nassim pendant l'entretien ?", choix: ["S'entraîner avec un client imaginaire.","Présenter le magasin.","Préparer une commande."], r: 0, p: 1,
           e: "La responsable lui a demandé « de faire un petit exercice avec un client imaginaire »." },
         { doc: "d1", s: "f", q: "Quand Nassim doit-il recevoir une réponse ?", choix: ["Jeudi.","Vendredi.","La semaine suivante."], r: 1, p: 1,
           e: "« Elle m'a dit que j'aurais une réponse vendredi. »" }
