@@ -20,17 +20,17 @@ window.SUJET = {
       lecture: 15, pause: 10, apres: 10,
       consigne: "Vous allez écouter six annonces publiques. Pour chaque annonce, lisez la question, écoutez, puis répondez.",
       documents: [
-        { id: "d1", titre: "Document 1 – À la médiathèque", audio: "",
+        { id: "d1", titre: "Document 1 – À la médiathèque", audio: "oral02_ex1_doc1.mp3",
           transcription: `<p><span data-s="a">Attention, la médiathèque sera exceptionnellement fermée mardi matin pour une réunion du personnel.</span> Elle ouvrira à quatorze heures. Les livres réservés pourront être retirés mercredi.</p>` },
-        { id: "d2", titre: "Document 2 – Le marché", audio: "",
+        { id: "d2", titre: "Document 2 – Le marché", audio: "oral02_ex1_doc2.mp3",
           transcription: `<p>Le marché de la place centrale commencera une heure plus tôt demain. <span data-s="a">Les commerçants seront installés dès sept heures.</span> Merci de laisser libres les accès aux garages pendant la matinée.</p>` },
-        { id: "d3", titre: "Document 3 – Un objet trouvé", audio: "",
+        { id: "d3", titre: "Document 3 – Un objet trouvé", audio: "oral02_ex1_doc3.mp3",
           transcription: `<p>Une paire de lunettes a été trouvée près de l'entrée du parc. Elle est noire, avec une petite boîte bleue. <span data-s="a">La personne qui l'a perdue peut appeler l'accueil municipal.</span></p>` },
-        { id: "d4", titre: "Document 4 – Une salle chauffée", audio: "",
+        { id: "d4", titre: "Document 4 – Une salle chauffée", audio: "oral02_ex1_doc4.mp3",
           transcription: `<p><span data-s="a">En raison du froid, la mairie ouvre une salle chauffée pour les personnes qui en ont besoin.</span> Elle se trouve rue des Écoles et sera ouverte jusqu'à vingt heures.</p>` },
-        { id: "d5", titre: "Document 5 – Un cours de cuisine", audio: "",
+        { id: "d5", titre: "Document 5 – Un cours de cuisine", audio: "oral02_ex1_doc5.mp3",
           transcription: `<p><span data-s="a">Le cours de cuisine prévu ce soir est déplacé à jeudi, même heure.</span> Les participants doivent garder leur réservation. Pour toute question, contactez directement l'animatrice avant midi.</p>` },
-        { id: "d6", titre: "Document 6 – Une collecte de vêtements", audio: "",
+        { id: "d6", titre: "Document 6 – Une collecte de vêtements", audio: "oral02_ex1_doc6.mp3",
           transcription: `<p><span data-s="a">Une collecte de vêtements pour enfants aura lieu samedi devant la mairie. Vous pouvez apporter des vêtements propres et en bon état, de la naissance à douze ans.</span></p>` }
       ],
       questions: [
@@ -62,11 +62,11 @@ window.SUJET = {
       lecture: 15, pause: 10, apres: 10,
       consigne: "Vous allez écouter trois extraits d'une émission de radio. Lisez les questions, écoutez, puis répondez.",
       documents: [
-        { id: "d1", titre: "Document 1 – Une photographe", audio: "",
+        { id: "d1", titre: "Document 1 – Une photographe", audio: "oral02_ex2_doc1.mp3",
           transcription: `<p><span data-s="a">Aujourd'hui, notre émission reçoit une jeune photographe qui photographie les paysages au lever du soleil.</span> <span data-s="b">Elle explique comment elle prépare ses images et pourquoi elle préfère travailler très tôt le matin, quand les rues sont calmes et la lumière naturelle revient doucement.</span></p>` },
-        { id: "d2", titre: "Document 2 – Un marché aux plantes", audio: "",
+        { id: "d2", titre: "Document 2 – Un marché aux plantes", audio: "oral02_ex2_doc2.mp3",
           transcription: `<p>Le marché aux plantes ouvrira dimanche dans le jardin public. <span data-s="a">On pourra acheter des fleurs, des plantes pour la maison et quelques graines.</span> <span data-s="b">Des jardiniers seront présents pour donner des conseils aux visiteurs et répondre aux questions des débutants.</span></p>` },
-        { id: "d3", titre: "Document 3 – La météo", audio: "",
+        { id: "d3", titre: "Document 3 – La météo", audio: "oral02_ex2_doc3.mp3",
           transcription: `<p>Après plusieurs jours de pluie, le soleil revient demain. Le matin sera encore frais, avec quelques nuages. <span data-s="a">L'après-midi, les températures monteront jusqu'à dix-neuf degrés.</span> <span data-s="b">Une petite averse reste possible en fin de journée, surtout dans le nord.</span></p>` }
       ],
       questions: [
@@ -98,7 +98,7 @@ window.SUJET = {
       lecture: 30, pause: 30, apres: 30,
       consigne: "Vous allez écouter un message laissé sur un répondeur. Lisez les questions, écoutez, puis répondez.",
       documents: [
-        { id: "d1", titre: "Message de Marc", audio: "",
+        { id: "d1", titre: "Message de Marc", audio: "oral02_ex3_doc1.mp3",
           transcription: `<p>Salut Julie, c'est Marc. Je t'appelle pour notre dîner de ce soir. <span data-s="a">Je suis désolé, mais je ne pourrai pas venir : mon fils a de la fièvre et je dois rester avec lui.</span> <span data-s="b">Est-ce qu'on peut déplacer notre dîner à samedi à dix-neuf heures ?</span> <span data-s="c">Je peux apporter le dessert.</span> <span data-s="d">J'ai déjà acheté les légumes et le fromage, je les garderai pour samedi.</span> <span data-s="e">Dis-moi si cela te convient et rappelle-moi quand tu auras ce message.</span> <span data-s="f">Si tu préfères, nous pouvons choisir dimanche soir.</span> Merci et à bientôt.</p>` }
       ],
       questions: [
@@ -130,13 +130,13 @@ window.SUJET = {
       lecture: 30, pause: 30, apres: 30,
       consigne: "Vous allez écouter quatre dialogues. Associez chaque dialogue à la bonne situation. Attention : deux situations ne sont pas utilisées.",
       documents: [
-        { id: "d1", titre: "Dialogue 1", audio: "",
+        { id: "d1", titre: "Dialogue 1", audio: "oral02_ex4_doc1.mp3",
           transcription: `<p>– Femme : <span data-s="a">Bonjour, je voudrais envoyer ce colis en Italie.</span><br>– Homme : D'accord. Il pèse combien ?<br>– Femme : Environ deux kilos. Je voudrais aussi un suivi.<br>– Homme : C'est possible. La livraison prendra environ cinq jours.<br>– Femme : Très bien, je choisis cette formule.</p>` },
-        { id: "d2", titre: "Dialogue 2", audio: "",
+        { id: "d2", titre: "Dialogue 2", audio: "oral02_ex4_doc2.mp3",
           transcription: `<p>– Homme : <span data-s="a">Bonjour, je voudrais changer mon rendez-vous.</span><br>– Femme : Quel rendez-vous avez-vous ?<br>– Homme : Celui de mardi matin. Je travaille à cette heure-là.<br>– Femme : Je peux vous proposer jeudi à quinze heures.<br>– Homme : Oui, jeudi après-midi me convient.</p>` },
-        { id: "d3", titre: "Dialogue 3", audio: "",
+        { id: "d3", titre: "Dialogue 3", audio: "oral02_ex4_doc3.mp3",
           transcription: `<p>– Femme : Excusez-moi, cette chambre est-elle encore disponible ?<br>– Homme : Oui, pour combien de nuits ?<br>– Femme : <span data-s="a">Pour deux nuits, à partir de vendredi.</span><br>– Homme : Très bien. Le petit-déjeuner est compris dans le prix.<br>– Femme : Parfait, je voudrais réserver cette chambre.</p>` },
-        { id: "d4", titre: "Dialogue 4", audio: "",
+        { id: "d4", titre: "Dialogue 4", audio: "oral02_ex4_doc4.mp3",
           transcription: `<p>– Homme : <span data-s="a">Bonjour, je cherche une paire de chaussures pour marcher.</span><br>– Femme : Quelle pointure faites-vous ?<br>– Homme : Du quarante-deux. Je voudrais quelque chose de confortable.<br>– Femme : Nous avons ce modèle, à soixante euros.<br>– Homme : Très bien, je peux les essayer ?</p>` }
       ],
       questions: [
