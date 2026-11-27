@@ -1,0 +1,81 @@
+/* « Apprendre et s'entraîner » : styles propres à cette rubrique.
+   Chargé APRÈS css/style.css, dont il réutilise les couleurs (--blue, --ok…).
+   style.css n'est pas modifié. */
+
+.tr { display: block; font-size: 14px; font-weight: normal; color: var(--muted); }
+button .tr, .bouton .tr { color: inherit; opacity: .85; font-size: 13px; }
+
+/* Accueil de la rubrique */
+.niveaux-entr { display: flex; gap: 8px; margin: 10px 0 4px; }
+.niveaux-entr span {
+  padding: 6px 14px; border: 1px solid var(--line); border-radius: 8px;
+  background: var(--card); color: var(--muted); font-weight: bold;
+}
+.niveaux-entr .actif { background: var(--blue); border-color: var(--blue); color: var(--on-blue); }
+.rubriques-entr { display: grid; gap: 10px; margin: 0; padding: 0; list-style: none; }
+.rubriques-entr a {
+  display: block; padding: 14px 16px; border-radius: 10px; border-left: 5px solid var(--blue);
+  background: var(--card); color: var(--ink); text-decoration: none;
+}
+.rubriques-entr a:hover { background: var(--blue-soft); }
+.rubriques-entr strong { color: var(--blue); font-size: 18px; }
+.rubriques-entr .serie { display: block; margin-top: 4px; font-size: 15px; }
+.rubriques-entr .fait { color: var(--ok); font-weight: bold; }
+
+/* Page d'une série */
+.consigne-serie { margin: 12px 0; }
+.consigne-serie p { margin: 0 0 6px; }
+.lien-traduction { min-height: 36px; padding: 4px 12px; margin: 0; font-size: 14px;
+  background: transparent; color: var(--blue); border: 1px solid var(--line); }
+.traduction-consigne { color: var(--muted); }
+.progres { margin: 14px 0 6px; color: var(--muted); font-size: 15px; }
+.progres .barre { height: 6px; margin-top: 4px; border-radius: 3px; background: var(--line); overflow: hidden; }
+.progres .barre span { display: block; height: 100%; background: var(--blue); }
+.exercice { margin-top: 8px; padding: 16px 18px; border-radius: 10px; background: var(--card); }
+.exercice .question { margin: 0 0 6px; font-weight: bold; }
+.exercice .type-consigne { margin: 0 0 8px; color: var(--muted); font-size: 15px; }
+.retour-exercice { margin-top: 10px; }
+.retour-exercice p { margin: 0 0 6px; }
+.actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+.actions button, .actions .bouton { margin: 0; }
+
+/* Texte à trous et saisie */
+.trous { line-height: 2.4; }
+.exercice input[type=text] {
+  min-height: 40px; padding: 6px 8px; border: 1px solid var(--line); border-radius: 6px;
+  background: var(--bg); color: var(--ink); font: inherit;
+}
+.trous input[type=text] { width: 7.5em; max-width: 100%; }
+.saisie input[type=text] { width: 100%; }
+.exercice input.juste { border: 2px solid var(--ok); }
+.exercice input.faux { border: 2px solid var(--ko); }
+
+/* Remise en ordre */
+.ordre-phrase, .ordre-mots { display: flex; flex-wrap: wrap; gap: 6px; min-height: 48px;
+  padding: 8px; border-radius: 8px; }
+.ordre-phrase { border: 2px dashed var(--line); margin-bottom: 8px; }
+.ordre-mots { background: var(--bg); }
+.mot { margin: 0; min-height: 40px; padding: 6px 12px; background: var(--card); color: var(--ink);
+  border: 1px solid var(--line); font-size: 16px; }
+.ordre-phrase .mot { border-color: var(--blue); }
+
+/* Document de lecture et audio */
+.document-entr { margin-top: 12px; padding: 14px 16px; border-radius: 10px;
+  border-left: 5px solid var(--blue); background: var(--card); }
+.document-entr h3 { margin: 0 0 8px; font-size: 18px; }
+.document-entr p { margin: 0 0 8px; }
+.script-audio { margin-top: 10px; padding-top: 8px; border-top: 1px solid var(--line); }
+
+/* Production écrite et orale */
+.liste-points { list-style: none; margin: 0; padding: 0; }
+.liste-points li { margin: 6px 0; }
+.liste-points label { display: flex; gap: 8px; align-items: flex-start; cursor: pointer; }
+.liste-points input { flex: none; width: 20px; height: 20px; margin-top: 3px; }
+.phrases-utiles { margin: 0; padding-left: 22px; }
+.phrases-utiles li { margin: 4px 0; }
+.minuteur { font-size: 36px; font-weight: bold; color: var(--blue); font-variant-numeric: tabular-nums; text-align: center; }
+.redaction textarea { font-size: 17px; background: var(--card); }
+.compteur-entr { color: var(--muted); font-size: 15px; text-align: right; margin: 4px 0 0; }
+.compteur-entr.assez { color: var(--ok); font-weight: bold; }
+.fin-serie { text-align: center; }
+.fin-serie .score-final { font-size: 24px; font-weight: bold; }

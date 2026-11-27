@@ -5,20 +5,43 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Apprendre et s'entraîner</title>
 <link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/entrainement.css">
 </head>
 <body>
 <main>
   <a class="retour" href="../index.html">← Accueil</a>
   <h1>Apprendre et s'entraîner</h1>
-  <p class="sub">Des exercices courts pour progresser, à votre rythme.</p>
+  <p class="sub">Des exercices courts, corrigés tout de suite, pour progresser à votre rythme.</p>
 
   <div class="encadre">
-    <p><b>Bientôt disponible.</b></p>
+    <p><b>Prototype de démonstration.</b> Les exercices ne sont pas encore vérifiés. Pour vous entraîner à l'examen, utilisez la rubrique <a href="../index.html#preparer">« Préparer le DELF »</a>.</p>
   </div>
 
-  <p class="aide">En attendant, vous pouvez vous entraîner avec les examens blancs de la rubrique « Préparer le DELF ».</p>
-  <p><a class="bouton" href="../index.html#preparer">Préparer le DELF</a></p>
+  <div class="niveaux-entr" aria-label="Niveau"><span>A1 · bientôt</span><span class="actif">A2</span></div>
+
+  <h2>Choisissez une rubrique</h2>
+  <ul class="rubriques-entr" id="rubriques"></ul>
 </main>
 <script src="../js/langues.js"></script>
+<script src="../js/entrainement/moteur.js"></script>
+<script src="../data/entrainement/a2/liste.js"></script>
+<script>
+// Liste des rubriques du niveau A2, avec le score de la dernière série faite.
+(function () {
+  var E = Entr, esc = E.esc, l = E.langue();
+  var codes = { en: "en", zh: "zh-Hans", vi: "vi" };
+  var R = (window.LISTE_ENTRAINEMENT && window.LISTE_ENTRAINEMENT.a2) || [];
+  document.getElementById("rubriques").innerHTML = R.map(function (r, i) {
+    var tr = E.traduction(r.titre);
+    return "<li>" + r.series.map(function (s) {
+      var sc = E.lireScore("a2-" + s.id);
+      var etat = s.libre ? "" : sc ? ' <span class="fait">✔ ' + sc.score + " / " + sc.max + "</span>" : "";
+      return '<a href="serie.html?niveau=a2&amp;id=' + encodeURIComponent(s.id) + '"><strong>' + (i + 1) + ". " + esc(E.fr(r.titre)) + "</strong>" +
+        (tr ? '<span class="tr" lang="' + codes[l] + '">' + esc(tr) + "</span>" : "") +
+        '<span class="serie">' + esc(s.titre) + etat + "</span></a>";
+    }).join("") + "</li>";
+  }).join("");
+})();
+</script>
 </body>
 </html>
