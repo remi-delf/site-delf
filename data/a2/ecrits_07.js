@@ -1,7 +1,8 @@
 // DELF A2 – Compréhension des écrits – Sujet 7
 // Textes originaux (proposés avec l'aide de ChatGPT, corrigés et validés par Rémi).
 // Corrections de Rémi (exercice 1) : Inès « peut payer cinq euros » ;
-// annonce 3 : « Réservé aux adultes. La séance coûte quatre euros. »
+// annonce 3 : « Réservé aux adultes. La séance coûte quatre euros. » ;
+// ordre des personnes mélangé pour que les réponses ne suivent pas l'ordre des annonces.
 // Ne jamais copier les vrais sujets.
 //
 // Même rangement que ecrits_01.js :
@@ -21,14 +22,14 @@ window.SUJET = {
       consigne: "Vous lisez ces annonces dans le journal de votre quartier. Ces personnes cherchent une activité, un service ou un travail. Pour chaque annonce, choisissez la personne qui correspond. Attention : deux personnes ne correspondent à aucune annonce.",
       intro: `<h3>Les personnes</h3>
 <ul class="personnes">
-<li><b>A. Léa</b>, 27 ans, cherche une coupe de cheveux pour samedi matin. Elle peut payer vingt-huit euros.</li>
-<li><b>B. Hugo</b>, 20 ans, aimerait apprendre à fabriquer des bougies. Il est disponible mercredi après-midi et peut payer six euros.</li>
-<li><b>C. Nadia</b>, 34 ans, aimerait découvrir l'astronomie jeudi soir. Elle est disponible de dix-huit heures trente à vingt heures.</li>
-<li><b>D. Sami</b>, 44 ans, a de petits objets en métal à donner pour le recyclage. Il est disponible vendredi de dix-sept heures à dix-neuf heures.</li>
-<li><b>E. Chloé</b>, 16 ans, cherche une activité de dessin pour débutants mercredi après-midi. Elle peut payer cinq euros.</li>
-<li><b>F. Paul</b>, 52 ans, doit faire une copie d'une clé samedi matin. Il peut payer sept euros.</li>
-<li><b>G. Inès</b>, 30 ans, aimerait apprendre à fabriquer des bougies mercredi après-midi. Elle peut payer cinq euros.</li>
-<li><b>H. Marc</b>, 15 ans, aimerait participer à une activité d'astronomie jeudi soir. Il est disponible de dix-huit heures trente à vingt heures.</li>
+<li><b>A. Sami</b>, 44 ans, a de petits objets en métal à donner pour le recyclage. Il est disponible vendredi de dix-sept heures à dix-neuf heures.</li>
+<li><b>B. Inès</b>, 30 ans, aimerait apprendre à fabriquer des bougies mercredi après-midi. Elle peut payer cinq euros.</li>
+<li><b>C. Léa</b>, 27 ans, cherche une coupe de cheveux pour samedi matin. Elle peut payer vingt-huit euros.</li>
+<li><b>D. Chloé</b>, 16 ans, cherche une activité de dessin pour débutants mercredi après-midi. Elle peut payer cinq euros.</li>
+<li><b>E. Marc</b>, 15 ans, aimerait participer à une activité d'astronomie jeudi soir. Il est disponible de dix-huit heures trente à vingt heures.</li>
+<li><b>F. Hugo</b>, 20 ans, aimerait apprendre à fabriquer des bougies. Il est disponible mercredi après-midi et peut payer six euros.</li>
+<li><b>G. Paul</b>, 52 ans, doit faire une copie d'une clé samedi matin. Il peut payer sept euros.</li>
+<li><b>H. Nadia</b>, 34 ans, aimerait découvrir l'astronomie jeudi soir. Elle est disponible de dix-huit heures trente à vingt heures.</li>
 </ul>`,
       choixCompacts: true,
       documents: [
@@ -46,17 +47,17 @@ window.SUJET = {
 <p><span data-s="a">Samedi, de dix heures à midi, un serrurier propose la copie de clés. Une clé simple coûte sept euros.</span> Il faut apporter la clé originale. Le service est sans rendez-vous.</p>` }
       ],
       questions: [
-        { doc: "d1", s: "a", q: "L'annonce 1 correspond à…", choix: ["Léa","Hugo","Nadia","Sami","Chloé","Paul","Inès","Marc"], r: 0, p: 1.5,
+        { doc: "d1", s: "a", q: "L'annonce 1 correspond à…", choix: ["Sami","Inès","Léa","Chloé","Marc","Hugo","Paul","Nadia"], r: 2, p: 1.5,
           e: "Léa cherche une coupe samedi matin pour vingt-huit euros : le salon propose une coupe « samedi, de neuf heures à midi », « à vingt-huit euros »." },
-        { doc: "d2", s: "a", q: "L'annonce 2 correspond à…", choix: ["Léa","Hugo","Nadia","Sami","Chloé","Paul","Inès","Marc"], r: 1, p: 1.5,
+        { doc: "d2", s: "a", q: "L'annonce 2 correspond à…", choix: ["Sami","Inès","Léa","Chloé","Marc","Hugo","Paul","Nadia"], r: 5, p: 1.5,
           e: "Hugo veut fabriquer des bougies mercredi après-midi et peut payer six euros : la séance coûte « six euros ». Attention : Inès veut la même activité, mais elle ne peut payer que cinq euros." },
-        { doc: "d3", s: "a", q: "L'annonce 3 correspond à…", choix: ["Léa","Hugo","Nadia","Sami","Chloé","Paul","Inès","Marc"], r: 2, p: 0.5,
+        { doc: "d3", s: "a", q: "L'annonce 3 correspond à…", choix: ["Sami","Inès","Léa","Chloé","Marc","Hugo","Paul","Nadia"], r: 7, p: 0.5,
           e: "Nadia, 34 ans, veut découvrir l'astronomie jeudi de 18 h 30 à 20 h : ce sont les horaires de la soirée. Attention : Marc a les mêmes horaires, mais il a 15 ans, et la soirée est « réservée aux adultes »." },
-        { doc: "d4", s: "a", q: "L'annonce 4 correspond à…", choix: ["Léa","Hugo","Nadia","Sami","Chloé","Paul","Inès","Marc"], r: 3, p: 1,
+        { doc: "d4", s: "a", q: "L'annonce 4 correspond à…", choix: ["Sami","Inès","Léa","Chloé","Marc","Hugo","Paul","Nadia"], r: 0, p: 1,
           e: "Sami veut donner de petits objets en métal vendredi de 17 h à 19 h : l'association « récupère les petits objets en métal » à ces horaires." },
-        { doc: "d5", s: "a", q: "L'annonce 5 correspond à…", choix: ["Léa","Hugo","Nadia","Sami","Chloé","Paul","Inès","Marc"], r: 4, p: 1,
+        { doc: "d5", s: "a", q: "L'annonce 5 correspond à…", choix: ["Sami","Inès","Léa","Chloé","Marc","Hugo","Paul","Nadia"], r: 3, p: 1,
           e: "Chloé cherche un atelier de dessin pour débutants mercredi après-midi, pour cinq euros : la séance a lieu « mercredi, de quatorze heures à seize heures » et « coûte cinq euros »." },
-        { doc: "d6", s: "a", q: "L'annonce 6 correspond à…", choix: ["Léa","Hugo","Nadia","Sami","Chloé","Paul","Inès","Marc"], r: 5, p: 0.5,
+        { doc: "d6", s: "a", q: "L'annonce 6 correspond à…", choix: ["Sami","Inès","Léa","Chloé","Marc","Hugo","Paul","Nadia"], r: 6, p: 0.5,
           e: "Paul doit faire copier une clé samedi matin pour sept euros : le serrurier est là « samedi, de dix heures à midi », et « une clé simple coûte sept euros »." }
       ]
     },
