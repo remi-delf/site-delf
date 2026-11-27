@@ -22,14 +22,14 @@ window.SUJET = {
       consigne: "Vous lisez ces annonces dans le journal de votre quartier. Ces personnes cherchent une activité, un service ou un travail. Pour chaque annonce, choisissez la personne qui correspond. Attention : deux personnes ne correspondent à aucune annonce.",
       intro: `<h3>Les personnes</h3>
 <ul class="personnes">
-<li><b>A. Dylan</b> travaille le soir du mardi au jeudi. Il cherche quelqu'un pour garder sa fille de quatre ans. Il peut payer huit euros de l'heure.</li>
-<li><b>B. Gabriel</b> aimerait apprendre à danser le jeudi soir. Il peut payer vingt euros par mois.</li>
-<li><b>C. Aurélie</b> habite rue des Roses. Elle voudrait rencontrer ses voisins vendredi soir et peut apporter un gâteau.</li>
-<li><b>D. Bilal</b> a quinze ans. Il voudrait faire du surf samedi matin et peut payer trente euros.</li>
-<li><b>E. Hélène</b> cherche une personne pour promener son chien le soir. Elle peut payer cinq euros par promenade.</li>
-<li><b>F. Emma</b> est adulte et ne sait pas nager. Elle cherche un cours le lundi soir et peut payer vingt euros par mois.</li>
-<li><b>G. Farid</b> cherche une sortie gratuite pour sa famille samedi après-midi. Ses enfants aiment les jeux.</li>
-<li><b>H. Cécile</b> veut emmener son fils de neuf ans à la patinoire mercredi. Elle cherche un prix réduit.</li>
+<li><b>A. Pascal</b> travaille le soir du mardi au jeudi. Il cherche quelqu'un pour garder sa fille de quatre ans. Il peut payer huit euros de l'heure.</li>
+<li><b>B. Étienne</b> aimerait apprendre à danser le jeudi soir. Il peut payer vingt euros par mois.</li>
+<li><b>C. Océane</b> habite rue des Roses. Elle voudrait rencontrer ses voisins vendredi soir et peut apporter un gâteau.</li>
+<li><b>D. Kévin</b> a quinze ans. Il voudrait faire du surf samedi matin et peut payer trente euros.</li>
+<li><b>E. Delphine</b> cherche une personne pour promener son chien le soir. Elle peut payer cinq euros par promenade.</li>
+<li><b>F. Laure</b> est adulte et ne sait pas nager. Elle cherche un cours le lundi soir et peut payer vingt euros par mois.</li>
+<li><b>G. Samuel</b> cherche une sortie gratuite pour sa famille samedi après-midi. Ses enfants aiment les jeux.</li>
+<li><b>H. Nathalie</b> veut emmener son fils de neuf ans à la patinoire mercredi. Elle cherche un prix réduit.</li>
 </ul>`,
       choixCompacts: true,
       documents: [
@@ -47,18 +47,18 @@ window.SUJET = {
 <p><span data-s="a">La kermesse de l'école aura lieu samedi après-midi dans la cour. Il y aura des jeux, des boissons et de la musique pour toute la famille. L'entrée est gratuite.</span></p>` }
       ],
       questions: [
-        { doc: "d1", s: "a", q: "L'annonce 1 correspond à…", choix: ["Dylan","Gabriel","Aurélie","Bilal","Hélène","Emma","Farid","Cécile"], r: 2, p: 1.5,
-          e: "Aurélie habite rue des Roses et veut rencontrer ses voisins vendredi soir avec un gâteau : c'est la fête des voisins de « la rue des Roses », « vendredi soir », où chacun apporte « un plat ou un gâteau »." },
-        { doc: "d2", s: "a", q: "L'annonce 2 correspond à…", choix: ["Dylan","Gabriel","Aurélie","Bilal","Hélène","Emma","Farid","Cécile"], r: 3, p: 1.5,
-          e: "Bilal, 15 ans, veut faire du surf samedi matin pour trente euros : la leçon a lieu « samedi matin », pour les jeunes « de quatorze ans et plus », à « trente euros »." },
-        { doc: "d3", s: "a", q: "L'annonce 3 correspond à…", choix: ["Dylan","Gabriel","Aurélie","Bilal","Hélène","Emma","Farid","Cécile"], r: 7, p: 0.5,
-          e: "Cécile veut emmener son fils de neuf ans à la patinoire mercredi, à prix réduit : le tarif réduit est « tous les mercredis », pour les enfants « de moins de douze ans »." },
-        { doc: "d4", s: "a", q: "L'annonce 4 correspond à…", choix: ["Dylan","Gabriel","Aurélie","Bilal","Hélène","Emma","Farid","Cécile"], r: 0, p: 1,
-          e: "Dylan travaille le soir du mardi au jeudi et cherche quelqu'un pour sa fille de quatre ans, à huit euros de l'heure : l'étudiante garde les enfants « le soir, du lundi au jeudi », « de trois à dix ans », pour « huit euros de l'heure »." },
-        { doc: "d5", s: "a", q: "L'annonce 5 correspond à…", choix: ["Dylan","Gabriel","Aurélie","Bilal","Hélène","Emma","Farid","Cécile"], r: 5, p: 1,
-          e: "Emma est adulte, ne sait pas nager et cherche un cours le lundi soir pour vingt euros par mois : le cours est « pour adultes débutants », « tous les lundis soir », à « vingt euros par mois ». Attention : Gabriel peut aussi payer vingt euros par mois, mais il veut danser le jeudi." },
-        { doc: "d6", s: "a", q: "L'annonce 6 correspond à…", choix: ["Dylan","Gabriel","Aurélie","Bilal","Hélène","Emma","Farid","Cécile"], r: 6, p: 0.5,
-          e: "Farid cherche une sortie gratuite en famille samedi après-midi, avec des jeux : la kermesse a lieu « samedi après-midi », avec « des jeux », et « l'entrée est gratuite »." }
+        { doc: "d1", s: "a", q: "L'annonce 1 correspond à…", choix: ["Pascal","Étienne","Océane","Kévin","Delphine","Laure","Samuel","Nathalie"], r: 2, p: 1.5,
+          e: "Océane habite rue des Roses et veut rencontrer ses voisins vendredi soir avec un gâteau : c'est la fête des voisins de « la rue des Roses », « vendredi soir », où chacun apporte « un plat ou un gâteau »." },
+        { doc: "d2", s: "a", q: "L'annonce 2 correspond à…", choix: ["Pascal","Étienne","Océane","Kévin","Delphine","Laure","Samuel","Nathalie"], r: 3, p: 1.5,
+          e: "Kévin, 15 ans, veut faire du surf samedi matin pour trente euros : la leçon a lieu « samedi matin », pour les jeunes « de quatorze ans et plus », à « trente euros »." },
+        { doc: "d3", s: "a", q: "L'annonce 3 correspond à…", choix: ["Pascal","Étienne","Océane","Kévin","Delphine","Laure","Samuel","Nathalie"], r: 7, p: 0.5,
+          e: "Nathalie veut emmener son fils de neuf ans à la patinoire mercredi, à prix réduit : le tarif réduit est « tous les mercredis », pour les enfants « de moins de douze ans »." },
+        { doc: "d4", s: "a", q: "L'annonce 4 correspond à…", choix: ["Pascal","Étienne","Océane","Kévin","Delphine","Laure","Samuel","Nathalie"], r: 0, p: 1,
+          e: "Pascal travaille le soir du mardi au jeudi et cherche quelqu'un pour sa fille de quatre ans, à huit euros de l'heure : l'étudiante garde les enfants « le soir, du lundi au jeudi », « de trois à dix ans », pour « huit euros de l'heure »." },
+        { doc: "d5", s: "a", q: "L'annonce 5 correspond à…", choix: ["Pascal","Étienne","Océane","Kévin","Delphine","Laure","Samuel","Nathalie"], r: 5, p: 1,
+          e: "Laure est adulte, ne sait pas nager et cherche un cours le lundi soir pour vingt euros par mois : le cours est « pour adultes débutants », « tous les lundis soir », à « vingt euros par mois ». Attention : Étienne peut aussi payer vingt euros par mois, mais il veut danser le jeudi." },
+        { doc: "d6", s: "a", q: "L'annonce 6 correspond à…", choix: ["Pascal","Étienne","Océane","Kévin","Delphine","Laure","Samuel","Nathalie"], r: 6, p: 0.5,
+          e: "Samuel cherche une sortie gratuite en famille samedi après-midi, avec des jeux : la kermesse a lieu « samedi après-midi », avec « des jeux », et « l'entrée est gratuite »." }
       ]
     },
 
