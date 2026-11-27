@@ -48,6 +48,41 @@
     try { localStorage.setItem("delf-brouillon-a2-ecrite-" + n + "-" + i, texte); } catch (e) {}
   }
 
+  // Affichage de la consigne, sans changer son texte (le prompt garde la consigne telle quelle) :
+  // - le message de l'ami (entre « ») dans un encadré ;
+  // - « Dans votre message / réponse : a ; b ; c. » en liste ;
+  // - « (60 mots minimum) » à part.
+  function esc(t) { return t.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;"); }
+  function texteEtListe(t) {
+    t = t.trim();
+    if (!t) return "";
+    var i = t.search(/Dans votre (message|réponse) :/);
+    if (i < 0) return '<p class="consigne">' + esc(t) + "</p>";
+    var avant = t.slice(0, i).trim();
+    var reste = t.slice(i);
+    var deuxPoints = reste.indexOf(":");
+    var titre = reste.slice(0, deuxPoints + 1);
+    var points = reste.slice(deuxPoints + 1).trim().replace(/\.$/, "").split(/\s*;\s*/);
+    return (avant ? '<p class="consigne">' + esc(avant) + "</p>" : "") +
+      '<p class="consigne">' + esc(titre) + "</p>" +
+      '<ul class="taches">' + points.map(function (x) { return "<li>" + esc(x) + "</li>"; }).join("") + "</ul>";
+  }
+  function afficherConsigne(t) {
+    var min = "";
+    var m = t.match(/\s*\((\d+ mots minimum)\)\s*$/);
+    if (m) { min = m[1]; t = t.slice(0, m.index); }
+    var html;
+    var msg = t.match(/«\s*([\s\S]+?)\s*»/);
+    if (msg) {
+      html = texteEtListe(t.slice(0, msg.index)) +
+        '<blockquote class="message-ami">' + esc(msg[1]) + "</blockquote>" +
+        texteEtListe(t.slice(msg.index + msg[0].length));
+    } else {
+      html = texteEtListe(t);
+    }
+    return html + (min ? '<p class="minimum">' + esc(min.charAt(0).toUpperCase() + min.slice(1)) + ".</p>" : "");
+  }
+
   function demarrer(sujet) {
     document.getElementById("sous-titre").textContent = "Sujet d'entraînement n° " + sujet.numero;
     document.title = "DELF A2 – Production écrite – Sujet " + sujet.numero;
@@ -60,7 +95,7 @@
     var zones = [];
     document.getElementById("exercices").innerHTML = sujet.exercices.map(function (x, i) {
       return '<div class="carte"><h3>' + x.titre + "</h3>" +
-        '<p class="consigne">' + x.consigne + "</p>" +
+        afficherConsigne(x.consigne) +
         '<label class="cache" for="texte' + i + '">Votre texte pour l\'' + x.titre.toLowerCase() + "</label>" +
         '<textarea id="texte' + i + '" rows="9" spellcheck="false" placeholder="Écrivez votre texte ici…"></textarea>' +
         '<p class="compteur" id="compteur' + i + '"></p></div>';
