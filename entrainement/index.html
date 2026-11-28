@@ -33,13 +33,13 @@
   var R = (window.LISTE_ENTRAINEMENT && window.LISTE_ENTRAINEMENT.a2) || [];
   document.getElementById("rubriques").innerHTML = R.map(function (r, i) {
     var tr = E.traduction(r.titre);
-    return "<li>" + r.series.map(function (s) {
-      var sc = E.lireScore("a2-" + s.id);
-      var etat = s.libre ? "" : sc ? ' <span class="fait">✔ ' + sc.score + " / " + sc.max + "</span>" : "";
-      return '<a href="serie.html?niveau=a2&amp;id=' + encodeURIComponent(s.id) + '"><strong>' + (i + 1) + ". " + esc(E.fr(r.titre)) + "</strong>" +
-        (tr ? '<span class="tr" lang="' + codes[l] + '">' + esc(tr) + "</span>" : "") +
-        '<span class="serie">' + esc(s.titre) + etat + "</span></a>";
-    }).join("") + "</li>";
+    return "<li><strong>" + (i + 1) + ". " + esc(E.fr(r.titre)) + "</strong>" +
+      (tr ? '<span class="tr" lang="' + codes[l] + '">' + esc(tr) + "</span>" : "") +
+      r.series.map(function (s) {
+        var sc = E.lireScore("a2-" + s.id);
+        var etat = s.libre ? "" : sc ? ' <span class="fait">✔ ' + sc.score + " / " + sc.max + "</span>" : "";
+        return '<a class="serie" href="serie.html?niveau=a2&amp;id=' + encodeURIComponent(s.id) + '">' + esc(s.titre) + etat + "</a>";
+      }).join("") + "</li>";
   }).join("");
 })();
 </script>

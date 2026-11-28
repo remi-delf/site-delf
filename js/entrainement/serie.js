@@ -1,4 +1,4 @@
-// Page d'une série d'entraînement : entrainement/serie.html?niveau=a2&id=lecture-01
+// Page d'une série d'entraînement : entrainement/serie.html?niveau=a2&id=lecture-courses
 // Charge data/entrainement/<niveau>/<id>.js (window.SERIE), puis affiche, selon la série :
 // - des exercices (items), un par un, avec correction immédiate et explication ;
 // - ou une production écrite (SERIE.redaction) ;
@@ -120,6 +120,14 @@
       return '<div class="document-entr">' + (S.document.titre ? "<h3>" + esc(S.document.titre) + "</h3>" : "") +
         S.document.texte.split("\n").map(function (p) { return "<p>" + esc(p) + "</p>"; }).join("") + "</div>";
     }
+    if (S.audio && S.audio.fichier) {
+      // Vrai fichier audio : lecteur du navigateur (lecture, pause, réécoute libre).
+      return '<div class="document-entr"><h3>' + esc(S.audio.titre || "Audio") + "</h3>" +
+        '<audio class="lecteur-audio" id="lecteur" controls preload="metadata" src="../audio/entrainement/' + esc(S.audio.fichier) + '"></audio>' +
+        '<p class="ko" id="audio-erreur" hidden>' + E.bilingue("audioBientot") + "</p>" +
+        '<p><button type="button" class="secondaire" id="voir-script" disabled>' + E.bilingue("texteAudio") + "</button></p>" +
+        '<div class="script-audio" hidden>' + S.audio.script.map(function (l) { return "<p>" + esc(l) + "</p>"; }).join("") + "</div></div>";
+    }
     if (S.audio) {
       var voix = "speechSynthesis" in window && window.SpeechSynthesisUtterance;
       return '<div class="document-entr"><h3>' + esc(S.audio.titre || "Audio") + "</h3>" +
@@ -144,6 +152,12 @@
         if (voixFr) u.voice = voixFr;
         synth.speak(u);
       });
+    });
+    var lecteur = document.getElementById("lecteur");
+    if (lecteur) lecteur.addEventListener("error", function () {
+      // Fichier introuvable : on prévient et on donne le texte tout de suite.
+      document.getElementById("audio-erreur").hidden = false;
+      document.getElementById("voir-script").disabled = false;
     });
     var v = document.getElementById("voir-script");
     if (v) v.addEventListener("click", function () { document.querySelector(".script-audio").hidden = false; });

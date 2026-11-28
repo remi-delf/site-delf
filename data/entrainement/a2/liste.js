@@ -1,13 +1,16 @@
 // « Apprendre et s'entraîner », niveau A2 : les rubriques et leurs séries.
 // Pour ajouter une série : créer data/entrainement/a2/<id>.js, puis l'ajouter ici.
-// Prototype : séries de démonstration écrites par l'IA, non vérifiées.
+// Prototype : compréhension écrite et orale = contenus validés par Rémi ;
+// autres rubriques = séries de démonstration écrites par l'IA, non vérifiées.
 // Traductions des titres faites par l'IA : à faire relire.
 window.LISTE_ENTRAINEMENT = {
   a2: [
     { titre: { fr: "Compréhension écrite", en: "Reading", zh: "阅读理解", vi: "Đọc hiểu" },
-      series: [{ id: "lecture-01", titre: "Un message à la voisine" }] },
+      series: [{ id: "lecture-courses", titre: "Les courses" },
+               { id: "lecture-transports", titre: "Le bus 14" }] },
     { titre: { fr: "Compréhension orale", en: "Listening", zh: "听力理解", vi: "Nghe hiểu" },
-      series: [{ id: "ecoute-01", titre: "À la boulangerie" }] },
+      series: [{ id: "ecoute-voisins", titre: "Un service entre voisins" },
+               { id: "ecoute-loisirs", titre: "Une sortie au cinéma" }] },
     { titre: { fr: "Vocabulaire", en: "Vocabulary", zh: "词汇", vi: "Từ vựng" },
       series: [{ id: "vocabulaire-01", titre: "La maison et les courses" }] },
     { titre: { fr: "Grammaire", en: "Grammar", zh: "语法", vi: "Ngữ pháp" },

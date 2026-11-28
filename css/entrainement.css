@@ -13,13 +13,17 @@ button .tr, .bouton .tr { color: inherit; opacity: .85; font-size: 13px; }
 }
 .niveaux-entr .actif { background: var(--blue); border-color: var(--blue); color: var(--on-blue); }
 .rubriques-entr { display: grid; gap: 10px; margin: 0; padding: 0; list-style: none; }
-.rubriques-entr a {
-  display: block; padding: 14px 16px; border-radius: 10px; border-left: 5px solid var(--blue);
-  background: var(--card); color: var(--ink); text-decoration: none;
+.rubriques-entr li {
+  padding: 14px 16px; border-radius: 10px; border-left: 5px solid var(--blue); background: var(--card);
 }
-.rubriques-entr a:hover { background: var(--blue-soft); }
 .rubriques-entr strong { color: var(--blue); font-size: 18px; }
-.rubriques-entr .serie { display: block; margin-top: 4px; font-size: 15px; }
+.rubriques-entr a.serie {
+  display: flex; align-items: center; justify-content: space-between; gap: 8px; flex-wrap: wrap;
+  min-height: 44px; margin-top: 8px; padding: 8px 12px; border: 1px solid var(--line); border-radius: 8px;
+  color: var(--ink); text-decoration: none; font-size: 16px;
+}
+.rubriques-entr a.serie:hover { border-color: var(--blue); background: var(--blue-soft); }
+.lecteur-audio { width: 100%; margin: 4px 0 8px; }
 .rubriques-entr .fait { color: var(--ok); font-weight: bold; }
 
 /* Page d'une série */
