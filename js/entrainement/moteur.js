@@ -50,6 +50,8 @@ window.Entr = (function () {
     sauve: { fr: "Brouillon sauvegardé sur cet appareil.", en: "Draft saved on this device.", zh: "草稿已保存在本设备上。", vi: "Đã lưu bản nháp trên thiết bị này." },
     points: { fr: "Points à vérifier vous-même", en: "Checklist", zh: "自查清单", vi: "Danh sách tự kiểm tra" },
     mots: { fr: "mots", en: "words", zh: "个词", vi: "từ" },
+    corrigerTitre: { fr: "Faire corriger mon texte par une IA", en: "Have my text corrected by an AI", zh: "让人工智能批改我的文章", vi: "Nhờ AI sửa bài viết của tôi" },
+    corrigerIA: { fr: "📋 Faire corriger par une IA", en: "Have it corrected by an AI", zh: "让人工智能批改", vi: "Nhờ AI sửa bài" },
     phrasesUtiles: { fr: "Phrases utiles", en: "Useful phrases", zh: "常用句子", vi: "Câu hữu ích" },
     modele: { fr: "Voir un modèle de réponse", en: "See a model answer", zh: "查看参考答案", vi: "Xem bài mẫu" },
     minuteur: { fr: "Minuteur (facultatif)", en: "Timer (optional)", zh: "计时器（可选）", vi: "Đồng hồ (không bắt buộc)" },

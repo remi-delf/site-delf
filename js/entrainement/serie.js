@@ -19,6 +19,7 @@
 
   function erreur() { app.innerHTML = '<div class="encadre"><p>Cette série n\'existe pas encore.</p></div>'; }
   var cleScore = niveau + "-" + id;
+  var NOMS_LANGUES = { en: "anglais", zh: "chinois (simplifié)", vi: "vietnamien" };
 
   // ---------- En-tête commun ----------
   function entete(S) {
@@ -177,6 +178,15 @@
       '<div class="carte redaction"><textarea id="texte" rows="10" placeholder="Écrivez votre texte ici…"></textarea>' +
       '<p class="compteur-entr" id="compteur"></p>' +
       '<div class="actions"><button type="button" id="sauver">' + E.bilingue("sauver") + '</button></div><p id="msg" aria-live="polite"></p></div>' +
+      '<h2>' + E.bilingue("corrigerTitre") + '</h2><div class="carte"><ol class="etapes">' +
+      "<li>Cliquez sur « Faire corriger par une IA » : le site copie une consigne toute prête, avec l'exercice et votre texte.</li>" +
+      "<li>Ouvrez l'IA de votre choix (Claude, ChatGPT…), collez le texte et envoyez-le.</li>" +
+      "<li>L'IA corrige vos erreurs, donne une note d'entraînement par critère, une version améliorée de votre texte et 3 conseils.</li></ol>" +
+      '<p class="aide">' + (NOMS_LANGUES[E.langue()]
+        ? "L'IA donnera aussi ses explications en <b>" + NOMS_LANGUES[E.langue()] + "</b>. Pour changer de langue, allez sur l'accueil."
+        : "Vous pouvez choisir sur l'accueil une langue (anglais, chinois, vietnamien) : l'IA donnera aussi ses explications dans cette langue.") + "</p>" +
+      '<p><button type="button" id="copier">' + E.bilingue("corrigerIA") + '</button></p><p id="copie" aria-live="polite"></p>' +
+      '<details class="voir-prompt"><summary>Voir le texte copié</summary><textarea id="texte-prompt" readonly rows="14"></textarea></details></div>' +
       points(R.points) +
       '<p class="actions"><a class="bouton" href="index.html">' + E.bilingue("retour") + "</a></p>";
     brancherTraduction();
@@ -193,6 +203,46 @@
       E.garderBrouillon(cleScore, zone.value);
       document.getElementById("msg").innerHTML = '<span class="ok">✔ ' + E.bilingue("sauve") + "</span>";
     });
+
+    // ----- Correction par une IA (même mécanisme que l'examen blanc : on copie une consigne) -----
+    function nbMots() { return zone.value.split(/\s+/).filter(function (w) { return /[0-9A-Za-zÀ-ÿœŒ]/.test(w); }).length; }
+    function prompt() {
+      var nom = NOMS_LANGUES[E.langue()];
+      var valeurs = {
+        "{{CONSIGNE}}": E.fr(S.consigne), "{{MINIMUM}}": String(min),
+        "{{MOTS}}": String(nbMots()), "{{TEXTE}}": zone.value.trim(),
+        "{{LANGUE}}": nom ? " Pour chaque explication (corrections, notes et conseils), écris d'abord en français, puis donne la même explication en " + nom + ", pour que je comprenne bien." : ""
+      };
+      // split/join : le texte de l'élève est recopié tel quel, même avec des caractères comme « $ ».
+      var resultat = window.PROMPT_REDACTION_ENTR || "";
+      Object.keys(valeurs).forEach(function (cle) { resultat = resultat.split(cle).join(valeurs[cle]); });
+      return resultat;
+    }
+    var copie = document.getElementById("copie"), voir = document.getElementById("texte-prompt");
+    document.getElementById("copier").addEventListener("click", function () {
+      var m = nbMots();
+      if (!zone.value.trim()) { copie.innerHTML = '<span class="ko">Votre texte est vide : écrivez d\'abord votre texte.</span>'; return; }
+      // Moins de la moitié des mots demandés : trop court pour une correction utile.
+      if (m < Math.ceil(min / 2)) {
+        copie.innerHTML = '<span class="ko">Votre texte est trop court (' + m + " mot" + (m > 1 ? "s" : "") + "). Écrivez au moins " + Math.ceil(min / 2) + " mots avant de le faire corriger (" + min + " mots demandés).</span>";
+        return;
+      }
+      var alerte = m < min ? '<br><span class="ko">Attention : votre texte a moins de ' + min + " mots. L'IA vous le dira.</span>" : "";
+      var texte = prompt();
+      voir.value = texte;
+      function ok() { copie.innerHTML = '<span class="ok">✔ Consigne copiée !</span> Collez-la maintenant dans l\'IA de votre choix.' + alerte; }
+      function secours() {
+        voir.closest("details").open = true;
+        voir.focus(); voir.select();
+        var reussi = false;
+        try { reussi = document.execCommand("copy"); } catch (e) {}
+        if (reussi) ok();
+        else copie.innerHTML = '<span class="ko">La copie automatique ne marche pas ici.</span> Le texte est sélectionné ci-dessous : copiez-le à la main.' + alerte;
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(texte).then(ok, secours);
+      else secours();
+    });
+    document.querySelector(".voir-prompt").addEventListener("toggle", function () { voir.value = prompt(); });
   }
 
   // ---------- Production orale ----------
