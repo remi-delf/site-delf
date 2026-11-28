@@ -1,7 +1,7 @@
 // « Apprendre et s'entraîner », niveau A2 : les rubriques et leurs séries.
 // Pour ajouter une série : créer data/entrainement/a2/<id>.js, puis l'ajouter ici.
-// Prototype : compréhension écrite et orale = contenus validés par Rémi ;
-// autres rubriques = séries de démonstration écrites par l'IA, non vérifiées.
+// Toutes les séries listées ici sont validées par Rémi (28/11/2026).
+// Production orale : mise de côté pour l'instant (bientot: true = carte « Bientôt disponible », sans lien).
 // Traductions des titres faites par l'IA : à faire relire.
 window.LISTE_ENTRAINEMENT = {
   a2: [
@@ -22,6 +22,6 @@ window.LISTE_ENTRAINEMENT = {
     { titre: { fr: "Production écrite", en: "Writing", zh: "书面表达", vi: "Viết" },
       series: [{ id: "ecrire-01", titre: "Inviter un ami à dîner", libre: true }] },
     { titre: { fr: "Production orale", en: "Speaking", zh: "口语表达", vi: "Nói" },
-      series: [{ id: "parler-01", titre: "Se présenter et demander un renseignement", libre: true }] }
+      bientot: true, series: [] }
   ]
 };

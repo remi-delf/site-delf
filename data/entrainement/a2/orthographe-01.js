@@ -1,4 +1,4 @@
-// Démonstration écrite par l'IA, non vérifiée. Traductions par l'IA, à faire relire.
+// Écrit par l'IA, vérifié et validé par Rémi après test sur téléphone (28/11/2026). Traductions par l'IA, à faire relire.
 // Ici, les accents comptent (accents: true).
 window.SERIE = {
   rubrique: { fr: "Orthographe", en: "Spelling", zh: "拼写", vi: "Chính tả" },

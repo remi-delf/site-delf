@@ -1,4 +1,4 @@
-// Démonstration écrite par l'IA, non vérifiée. Traductions par l'IA, à faire relire.
+// Écrit par l'IA, vérifié et validé par Rémi après test sur téléphone (28/11/2026). Traductions par l'IA, à faire relire.
 window.SERIE = {
   rubrique: { fr: "Conjugaison", en: "Verb conjugation", zh: "动词变位", vi: "Chia động từ" },
   titre: "Présent, passé composé, imparfait, futur proche",

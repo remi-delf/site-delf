@@ -1,4 +1,4 @@
-// Démonstration écrite par l'IA, non vérifiée. Traductions par l'IA, à faire relire.
+// Écrit par l'IA, vérifié et validé par Rémi après test sur téléphone (28/11/2026). Traductions par l'IA, à faire relire.
 window.SERIE = {
   rubrique: { fr: "Vocabulaire", en: "Vocabulary", zh: "词汇", vi: "Từ vựng" },
   titre: "La maison et les courses",

@@ -1,4 +1,4 @@
-// Démonstration écrite par l'IA, non vérifiée. Traductions par l'IA, à faire relire.
+// Écrit par l'IA, vérifié et validé par Rémi après test sur téléphone (28/11/2026). Traductions par l'IA, à faire relire.
 window.SERIE = {
   rubrique: { fr: "Production écrite", en: "Writing", zh: "书面表达", vi: "Viết" },
   titre: "Inviter un ami à dîner",

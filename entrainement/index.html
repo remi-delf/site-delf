@@ -13,10 +13,6 @@
   <h1>Apprendre et s'entraîner</h1>
   <p class="sub">Des exercices courts, corrigés tout de suite, pour progresser à votre rythme.</p>
 
-  <div class="encadre">
-    <p><b>Prototype de démonstration.</b> Les exercices ne sont pas encore vérifiés. Pour vous entraîner à l'examen, utilisez la rubrique <a href="../index.html#preparer">« Préparer le DELF »</a>.</p>
-  </div>
-
   <div class="niveaux-entr" aria-label="Niveau"><span>A1 · bientôt</span><span class="actif">A2</span></div>
 
   <h2>Choisissez une rubrique</h2>
@@ -35,6 +31,7 @@
     var tr = E.traduction(r.titre);
     return "<li><strong>" + (i + 1) + ". " + esc(E.fr(r.titre)) + "</strong>" +
       (tr ? '<span class="tr" lang="' + codes[l] + '">' + esc(tr) + "</span>" : "") +
+      (r.bientot ? '<p class="aide"><b>Bientôt disponible.</b> En attendant, entraînez-vous à l\'oral avec les examens blancs de <a href="../index.html#preparer">« Préparer le DELF »</a>.</p>' : "") +
       r.series.map(function (s) {
         var sc = E.lireScore("a2-" + s.id);
         var etat = s.libre ? "" : sc ? ' <span class="fait">✔ ' + sc.score + " / " + sc.max + "</span>" : "";
